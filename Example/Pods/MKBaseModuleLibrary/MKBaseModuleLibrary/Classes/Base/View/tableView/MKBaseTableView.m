@@ -14,6 +14,7 @@
     if (self = [super initWithFrame:frame style:style]) {
         self.separatorStyle = UITableViewCellSeparatorStyleNone;
         self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

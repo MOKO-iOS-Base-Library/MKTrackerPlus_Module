@@ -77,4 +77,17 @@ static const char *prohibitedMethodsListKey = "prohibitedMethodsListKey";
     return objc_getAssociatedObject(self, &prohibitedMethodsListKey);
 }
 
+- (void)mk_selectAllText {
+    UITextRange *range = [self textRangeFromPosition:self.beginningOfDocument toPosition:self.endOfDocument];
+    [self setSelectedTextRange:range];
+}
+
+- (void)mk_setSelectedRange:(NSRange)range {
+    UITextPosition *beginning = self.beginningOfDocument;
+    UITextPosition *startPosition = [self positionFromPosition:beginning offset:range.location];
+    UITextPosition *endPosition = [self positionFromPosition:beginning offset:NSMaxRange(range)];
+    UITextRange *selectionRange = [self textRangeFromPosition:startPosition toPosition:endPosition];
+    [self setSelectedTextRange:selectionRange];
+}
+
 @end

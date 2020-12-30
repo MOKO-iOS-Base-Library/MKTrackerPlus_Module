@@ -180,7 +180,6 @@ Pod::Spec.new do |s|
   s.dependency 'MKBaseModuleLibrary'
   s.dependency 'MKCustomUIModule'
   s.dependency 'HHTransition'
-  s.dependency 'YYKit'
   s.dependency 'FMDB'
   s.dependency 'MLInputDodger'
   s.dependency 'iOSDFULibrary','4.6.1'

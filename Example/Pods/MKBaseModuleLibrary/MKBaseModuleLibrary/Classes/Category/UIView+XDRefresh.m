@@ -6,7 +6,9 @@
 //
 
 #import "UIView+XDRefresh.h"
+
 #import <objc/runtime.h>
+
 @class RefreshView;
 
 #define MARGINTOP   50      //刷新icon区间

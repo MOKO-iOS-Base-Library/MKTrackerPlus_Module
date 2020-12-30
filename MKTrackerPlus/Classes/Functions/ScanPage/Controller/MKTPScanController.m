@@ -10,13 +10,12 @@
 
 #import "Masonry.h"
 
-#import "NSObject+YYModel.h"
-
 #import "UIViewController+HHTransition.h"
 
 #import "MKMacroDefines.h"
 #import "MKBaseTableView.h"
 #import "UIView+MKAdd.h"
+#import "NSObject+MKModel.h"
 
 #import "MKHudManager.h"
 #import "MKSearchButton.h"
@@ -197,7 +196,7 @@ MKTPTabBarControllerDelegate>
 
 #pragma mark - mk_tp_centralManagerScanDelegate
 - (void)mk_tp_receiveDevice:(NSDictionary *)trackerModel {
-    MKTPTrackerModel *model = [MKTPTrackerModel modelWithJSON:trackerModel];
+    MKTPTrackerModel *model = [MKTPTrackerModel mk_modelWithJSON:trackerModel];
     [self updateDataWithTrackerModel:model];
 }
 

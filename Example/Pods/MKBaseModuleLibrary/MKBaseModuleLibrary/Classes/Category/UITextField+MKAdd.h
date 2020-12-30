@@ -32,4 +32,16 @@
  */
 @property (nonatomic, strong)NSArray <NSString *>*prohibitedMethodsList;
 
+/**
+ Set all text selected.
+ */
+- (void)mk_selectAllText;
+
+/**
+ Set text in range selected.
+ 
+ @param range  The range of selected text in a document.
+ */
+- (void)mk_setSelectedRange:(NSRange)range;
+
 @end

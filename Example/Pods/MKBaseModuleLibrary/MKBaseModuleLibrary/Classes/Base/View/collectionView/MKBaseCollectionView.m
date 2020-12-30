@@ -15,6 +15,7 @@
         self.showsVerticalScrollIndicator = NO;
         self.showsHorizontalScrollIndicator = NO;
         self.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }

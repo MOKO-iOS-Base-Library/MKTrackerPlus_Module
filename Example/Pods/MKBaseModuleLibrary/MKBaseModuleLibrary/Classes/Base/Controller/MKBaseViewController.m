@@ -10,7 +10,9 @@
 #import "WRNavigationBar.h"
 
 #import "MKMacroDefines.h"
-#import "MKCategoryModule.h"
+
+#import "UINavigationItem+MKAdd.h"
+#import "UIButton+MKAdd.h"
 
 @interface MKBaseViewController ()<UIGestureRecognizerDelegate>
 /**
