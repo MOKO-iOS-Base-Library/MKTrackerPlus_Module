@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Target_TrackerPlus_Module : NSObject
 
 /// 扫描页面
-- (UIViewController *)Action_TrackerPlus_Module_ScanController;
+- (UIViewController *)Action_TrackerPlus_Module_ScanController:(NSDictionary *)params;
 
 @end
 

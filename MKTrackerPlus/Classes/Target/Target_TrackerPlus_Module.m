@@ -13,7 +13,7 @@
 @implementation Target_TrackerPlus_Module
 
 /// 扫描页面
-- (UIViewController *)Action_TrackerPlus_Module_ScanController {
+- (UIViewController *)Action_TrackerPlus_Module_ScanController:(NSDictionary *)params {
     return [[MKTPScanController alloc] init];
 }
 
