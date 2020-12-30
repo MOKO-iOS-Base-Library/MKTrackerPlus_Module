@@ -1,0 +1,873 @@
+PODS:
+  - CircleProgressBar (0.32)
+  - CTMediator (44)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - HHTransition (3.0.2)
+  - iOSDFULibrary (4.6.1):
+    - ZIPFoundation (= 0.9.9)
+  - Masonry (1.1.0)
+  - MBProgressHUD (1.2.0)
+  - MJRefresh (3.5.0)
+  - MKBaseBleModule (1.0.1)
+  - MKBaseModuleLibrary (1.0.5):
+    - MKBaseModuleLibrary/Base (= 1.0.5)
+    - MKBaseModuleLibrary/Category (= 1.0.5)
+    - MKBaseModuleLibrary/Defines (= 1.0.5)
+    - MKBaseModuleLibrary/Tools (= 1.0.5)
+  - MKBaseModuleLibrary/Base (1.0.5):
+    - MKBaseModuleLibrary/Base/Cell (= 1.0.5)
+    - MKBaseModuleLibrary/Base/Controller (= 1.0.5)
+    - MKBaseModuleLibrary/Base/NavigationController (= 1.0.5)
+    - MKBaseModuleLibrary/Base/View (= 1.0.5)
+  - MKBaseModuleLibrary/Base/Cell (1.0.5):
+    - MKBaseModuleLibrary/Base/Cell/MKBaseCell (= 1.0.5)
+  - MKBaseModuleLibrary/Base/Cell/MKBaseCell (1.0.5):
+    - Masonry
+    - MKBaseModuleLibrary/Defines
+  - MKBaseModuleLibrary/Base/Controller (1.0.5):
+    - MKBaseModuleLibrary/Base/View/WRNavigationBar
+    - MKBaseModuleLibrary/Category
+    - MKBaseModuleLibrary/Defines
+  - MKBaseModuleLibrary/Base/NavigationController (1.0.5)
+  - MKBaseModuleLibrary/Base/View (1.0.5):
+    - MKBaseModuleLibrary/Base/View/CollectionView (= 1.0.5)
+    - MKBaseModuleLibrary/Base/View/TableView (= 1.0.5)
+    - MKBaseModuleLibrary/Base/View/WRNavigationBar (= 1.0.5)
+  - MKBaseModuleLibrary/Base/View/CollectionView (1.0.5)
+  - MKBaseModuleLibrary/Base/View/TableView (1.0.5)
+  - MKBaseModuleLibrary/Base/View/WRNavigationBar (1.0.5):
+    - MKBaseModuleLibrary/Defines
+  - MKBaseModuleLibrary/Category (1.0.5):
+    - MKBaseModuleLibrary/Defines
+    - Toast
+  - MKBaseModuleLibrary/Defines (1.0.5)
+  - MKBaseModuleLibrary/Tools (1.0.5):
+    - MKBaseModuleLibrary/Tools/MKDateFormatter (= 1.0.5)
+    - MKBaseModuleLibrary/Tools/MKModuleManager (= 1.0.5)
+  - MKBaseModuleLibrary/Tools/MKDateFormatter (1.0.5)
+  - MKBaseModuleLibrary/Tools/MKModuleManager (1.0.5)
+  - MKCustomUIModule (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Cell (= 1.0.6)
+    - MKCustomUIModule/Controller (= 1.0.6)
+    - MKCustomUIModule/UIAdopter (= 1.0.6)
+    - MKCustomUIModule/View (= 1.0.6)
+  - MKCustomUIModule/Cell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Cell/MKFilterDataCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKLoraDeviceTypeCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKMeasureTxPowerCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKNormalTextCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKTextButtonCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKTextFieldCell (= 1.0.6)
+    - MKCustomUIModule/Cell/MKTextSwitchCell (= 1.0.6)
+  - MKCustomUIModule/Cell/MKFilterDataCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKTextField
+  - MKCustomUIModule/Cell/MKLoraDeviceTypeCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Cell/MKMeasureTxPowerCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/UIAdopter
+    - MKCustomUIModule/View/MKSlider
+  - MKCustomUIModule/Cell/MKNormalTextCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Cell/MKTextButtonCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKPickerView
+  - MKCustomUIModule/Cell/MKTextFieldCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/MKTextField
+  - MKCustomUIModule/Cell/MKTextSwitchCell (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Controller (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.0.6)
+    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.0.6)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.0.6)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Controller/MKTrackerLogPage (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.0.6)
+  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/UIAdopter (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/View/HaveRefreshView (= 1.0.6)
+    - MKCustomUIModule/View/MKHexKeyBoard (= 1.0.6)
+    - MKCustomUIModule/View/MKHudManager (= 1.0.6)
+    - MKCustomUIModule/View/MKPageControl (= 1.0.6)
+    - MKCustomUIModule/View/MKPickerView (= 1.0.6)
+    - MKCustomUIModule/View/MKProgressView (= 1.0.6)
+    - MKCustomUIModule/View/MKSearchButton (= 1.0.6)
+    - MKCustomUIModule/View/MKSearchConditionsView (= 1.0.6)
+    - MKCustomUIModule/View/MKSlider (= 1.0.6)
+    - MKCustomUIModule/View/MKTextField (= 1.0.6)
+  - MKCustomUIModule/View/HaveRefreshView (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKHexKeyBoard (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKHudManager (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKPageControl (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKPickerView (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/UIAdopter
+  - MKCustomUIModule/View/MKProgressView (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKSearchButton (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKSearchConditionsView (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+    - MKCustomUIModule/UIAdopter
+    - MKCustomUIModule/View/MKSlider
+  - MKCustomUIModule/View/MKSlider (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/View/MKTextField (1.0.6):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKTrackerPlus (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/ApplicationModule (= 0.1.0)
+    - MKTrackerPlus/CTMediator (= 0.1.0)
+    - MKTrackerPlus/Database (= 0.1.0)
+    - MKTrackerPlus/DeviceTypeManager (= 0.1.0)
+    - MKTrackerPlus/Functions (= 0.1.0)
+    - MKTrackerPlus/SDK-TP (= 0.1.0)
+    - MKTrackerPlus/Target (= 0.1.0)
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/ApplicationModule (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/CTMediator (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Database (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/DeviceTypeManager (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/AdvertiserPage (= 0.1.0)
+    - MKTrackerPlus/Functions/DeviceInfoPage (= 0.1.0)
+    - MKTrackerPlus/Functions/FilterOptionsPage (= 0.1.0)
+    - MKTrackerPlus/Functions/ScanPage (= 0.1.0)
+    - MKTrackerPlus/Functions/SettingPage (= 0.1.0)
+    - MKTrackerPlus/Functions/TabBarPage (= 0.1.0)
+    - MKTrackerPlus/Functions/TrackerConfigPage (= 0.1.0)
+    - MKTrackerPlus/Functions/TrackerDataPage (= 0.1.0)
+    - MKTrackerPlus/Functions/UpdatePage (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/AdvertiserPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/AdvertiserPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/AdvertiserPage/Model (= 0.1.0)
+    - MKTrackerPlus/Functions/AdvertiserPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/AdvertiserPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/AdvertiserPage/Model
+    - MKTrackerPlus/Functions/AdvertiserPage/View
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/AdvertiserPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/AdvertiserPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/DeviceInfoPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/DeviceInfoPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/DeviceInfoPage/Model (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/DeviceInfoPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/DeviceInfoPage/Model
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/DeviceInfoPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/FilterOptionsPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/FilterOptionsPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/FilterOptionsPage/Model (= 0.1.0)
+    - MKTrackerPlus/Functions/FilterOptionsPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/FilterOptionsPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/FilterOptionsPage/Model
+    - MKTrackerPlus/Functions/FilterOptionsPage/View
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/FilterOptionsPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/FilterOptionsPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/ScanPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/ScanPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/ScanPage/Model (= 0.1.0)
+    - MKTrackerPlus/Functions/ScanPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/ScanPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/ScanPage/Model
+    - MKTrackerPlus/Functions/ScanPage/View
+    - MKTrackerPlus/Functions/TabBarPage
+    - MKTrackerPlus/Functions/UpdatePage
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/ScanPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/ScanPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/ScanPage/Model
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/SettingPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/SettingPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/SettingPage/Model (= 0.1.0)
+    - MKTrackerPlus/Functions/SettingPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/SettingPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/SettingPage/Model
+    - MKTrackerPlus/Functions/SettingPage/View
+    - MKTrackerPlus/Functions/UpdatePage
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/SettingPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/SettingPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TabBarPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/TabBarPage/Controller (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TabBarPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/AdvertiserPage
+    - MKTrackerPlus/Functions/DeviceInfoPage
+    - MKTrackerPlus/Functions/SettingPage
+    - MKTrackerPlus/Functions/TrackerConfigPage
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerConfigPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/TrackerConfigPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/TrackerConfigPage/Model (= 0.1.0)
+    - MKTrackerPlus/Functions/TrackerConfigPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerConfigPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/FilterOptionsPage
+    - MKTrackerPlus/Functions/TrackerConfigPage/Model
+    - MKTrackerPlus/Functions/TrackerConfigPage/View
+    - MKTrackerPlus/Functions/TrackerDataPage
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerConfigPage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerConfigPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerDataPage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/TrackerDataPage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/TrackerDataPage/View (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerDataPage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/TrackerDataPage/View
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/TrackerDataPage/View (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/UpdatePage (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/UpdatePage/Controller (= 0.1.0)
+    - MKTrackerPlus/Functions/UpdatePage/Model (= 0.1.0)
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/UpdatePage/Controller (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/Functions/UpdatePage/Model
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Functions/UpdatePage/Model (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/CTMediator
+    - MKTrackerPlus/Database
+    - MKTrackerPlus/DeviceTypeManager
+    - MKTrackerPlus/SDK-TP
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/SDK-TP (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+    - YYKit
+  - MKTrackerPlus/Target (0.1.0):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MKTrackerPlus/Functions
+    - MLInputDodger
+    - YYKit
+  - MLInputDodger (1.5.2)
+  - Toast (4.0.0)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+  - ZIPFoundation (0.9.9)
+
+DEPENDENCIES:
+  - MKTrackerPlus (from `../`)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - CircleProgressBar
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+    - Toast
+    - YYKit
+    - ZIPFoundation
+
+EXTERNAL SOURCES:
+  MKTrackerPlus:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
+  CTMediator: 933dba523da87bf875e4a7e8728945fbc512f1d2
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  HHTransition: ca5035c126a6a2dc1eb9a90d084013784bf4bf0a
+  iOSDFULibrary: 3053cf01eaabec37dc7372fb77ae4a218b577c55
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
+  MKBaseBleModule: ab876657390779fcf62de2ce0494698fa7438b17
+  MKBaseModuleLibrary: 5712e6ff415b3786179e13c4d85c837c5709be7a
+  MKCustomUIModule: 905ae83262ef281d0016e854462e5ff1cddc6501
+  MKTrackerPlus: 2a508098a7bb8d70ce35eb6ba33823485fdd8dc4
+  MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+  ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef
+
+PODFILE CHECKSUM: b7603e7667c28a107fcd099fab6b1cae2327035c
+
+COCOAPODS: 1.10.0.rc.1
