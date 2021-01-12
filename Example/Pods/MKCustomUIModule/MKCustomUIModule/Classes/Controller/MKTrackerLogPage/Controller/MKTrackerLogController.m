@@ -11,11 +11,12 @@
 #import <MessageUI/MessageUI.h>
 #import <sys/utsname.h>
 
-#import <Masonry/Masonry.h>
+#import "Masonry.h"
 
-#import <MKBaseModuleLibrary/MKMacroDefines.h>
-#import <MKBaseModuleLibrary/UIView+MKAdd.h>
-#import <MKBaseModuleLibrary/NSString+MKAdd.h>
+#import "MKMacroDefines.h"
+#import "UIView+MKAdd.h"
+#import "NSString+MKAdd.h"
+#import "UIApplication+MKAdd.h"
 
 @interface MKTrackerLogController ()<MFMailComposeViewControllerDelegate>
 
@@ -86,7 +87,7 @@
     NSString *bodyMsg = [NSString stringWithFormat:@"APP Version: %@ + + OS: %@ + phone: %@",
                          version,
                          kSystemVersionString,
-                         [self deviceString]];
+                         [UIApplication currentIphoneType]];
     MFMailComposeViewController *mailComposer = [[MFMailComposeViewController alloc] init];
     mailComposer.mailComposeDelegate = self;
     
@@ -112,42 +113,10 @@
     return fileData;
 }
 
-/**
- 获取当前手机机型
- 
- @return 当前机型
- */
-- (NSString *)deviceString{
-    struct utsname systemInfo;
-    uname(&systemInfo);
-    NSString *deviceString = [NSString stringWithCString:systemInfo.machine
-                                                encoding:NSUTF8StringEncoding];
-    //iPhone
-    if ([deviceString isEqualToString:@"iPhone1,1"]) return @"iPhone 1G";
-    if ([deviceString isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
-    if ([deviceString isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
-    if ([deviceString isEqualToString:@"iPhone3,1"]) return @"iPhone 4";
-    if ([deviceString isEqualToString:@"iPhone3,2"]) return @"Verizon iPhone 4";
-    if ([deviceString isEqualToString:@"iPhone4,1"]) return @"iPhone 4S";
-    if ([deviceString isEqualToString:@"iPhone5,1"]) return @"iPhone 5";
-    if ([deviceString isEqualToString:@"iPhone5,2"]) return @"iPhone 5";
-    if ([deviceString isEqualToString:@"iPhone5,3"]) return @"iPhone 5C";
-    if ([deviceString isEqualToString:@"iPhone5,4"]) return @"iPhone 5C";
-    if ([deviceString isEqualToString:@"iPhone6,1"]) return @"iPhone 5S";
-    if ([deviceString isEqualToString:@"iPhone6,2"]) return @"iPhone 5S";
-    if ([deviceString isEqualToString:@"iPhone7,1"]) return @"iPhone 6 Plus";
-    if ([deviceString isEqualToString:@"iPhone7,2"]) return @"iPhone 6";
-    if ([deviceString isEqualToString:@"iPhone8,1"]) return @"iPhone 6s";
-    if ([deviceString isEqualToString:@"iPhone8,2"]) return @"iPhone 6s Plus";
-    if ([deviceString isEqualToString:@"iPhone9,1"]) return @"iPhone 7";
-    if ([deviceString isEqualToString:@"iPhone9,3"]) return @"iPhone 7";
-    if ([deviceString isEqualToString:@"iPhone9,2"]) return @"iPhone 7 Plus";
-    if ([deviceString isEqualToString:@"iPhone9,4"]) return @"iPhone 7 Plus";
-    
-    return deviceString;
-}
-
 - (void)loadSubViews {
+    if ([self.protocol conformsToProtocol:@protocol(MKTrackerLogPageProtocol)]) {
+        return;
+    }
     if (self.protocol.titleBarColor) {
         self.custom_naviBarColor = self.protocol.titleBarColor;
     }

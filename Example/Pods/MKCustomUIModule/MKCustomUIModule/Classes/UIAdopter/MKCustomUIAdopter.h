@@ -34,6 +34,16 @@ NS_ASSUME_NONNULL_BEGIN
                                           fonts:(NSArray <NSFont *>*)fonts
                                          colors:(NSArray <UIColor *>*)colors;
 
+/// 求富文本字符串所在控件的高度
+/// @param string 富文本
+/// @param viewWidth 当前富文本所在控件的最大宽度
++ (CGFloat)strHeightForAttributeStr:(NSAttributedString *)string viewWidth:(CGFloat)viewWidth;
+
+/// 求富文本字符串所在控件的宽度
+/// @param string 富文本
+/// @param viewHeight 当前富文本所在控件的最大高度
++ (CGFloat)strWidthForAttributeStr:(NSAttributedString *)string viewHeight:(CGFloat)viewHeight;
+
 /// 旋转动画
 /// @param duration 旋转一周时长
 + (CABasicAnimation *)refreshAnimation:(NSTimeInterval)duration;

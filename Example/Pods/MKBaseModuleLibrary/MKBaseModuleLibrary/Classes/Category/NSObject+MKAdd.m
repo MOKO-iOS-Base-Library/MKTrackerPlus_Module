@@ -348,7 +348,7 @@ else if (size <= 4 * _size_ ) { \
     }
 }
 
-- (void)performSelector:(SEL)sel afterDelay:(NSTimeInterval)delay {
+- (void)mk_performSelector:(SEL)sel afterDelay:(NSTimeInterval)delay {
     [self performSelector:sel withObject:nil afterDelay:delay];
 }
 

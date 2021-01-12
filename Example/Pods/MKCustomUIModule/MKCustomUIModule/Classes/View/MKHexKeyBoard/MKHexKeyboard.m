@@ -8,8 +8,8 @@
 
 #import "MKHexKeyboard.h"
 
-#import "MKCategoryModule.h"
 #import "MKMacroDefines.h"
+#import "UIView+MKAdd.h"
 
 static CGFloat const keyboardHeight = 275.f;
 static NSTimeInterval const animationDuration = .3f;

@@ -18,20 +18,42 @@ typedef NS_ENUM(NSInteger, mk_filterDataCellType) {
 
 @interface MKFilterDataCellModel : NSObject
 
+#pragma mark ------------------------- cell最顶层配置 ---------------------------------
+
 /// 当前cell所在的index
 @property (nonatomic, assign)NSInteger index;
+
+/*
+    cell类型.
+ 对于有两个输入框的cell而言，From [textField1] To [textField2]
+ 一个输入框,[textField]
+ */
+
+/// 当前cell的类型，mk_filterDataCellType_normal默认是有一个输入框，mk_filterDataCellType_double有两个输入框，且显示From和To标签
+@property (nonatomic, assign)mk_filterDataCellType cellType;
+
+/**************************************************顶部信息设置*********************************************************/
 
 /// 顶部msg
 @property (nonatomic, copy)NSString *msg;
 
+#pragma mark ------------------------- 顶部开关配置 ---------------------------------
+
 /// 开关状态
 @property (nonatomic, assign)BOOL isOn;
+
+/// 开关是否能用，默认YES
+@property (nonatomic, assign)BOOL switchEnable;
+
+#pragma mark ------------------------- 第二行的那个按钮配置 ---------------------------------
 
 /// 选中按钮状态
 @property (nonatomic, assign)BOOL selected;
 
-/// 当前cell的类型，mk_filterDataCellType_normal默认是有一个输入框，mk_filterDataCellType_double有两个输入框，且显示From和To标签
-@property (nonatomic, assign)mk_filterDataCellType cellType;
+/// 选中按钮是否可用，默认YES
+@property (nonatomic, assign)BOOL enabled;
+
+#pragma mark ------------------------- mk_filterDataCellType_normal的时候，textField的设置 ---------------------------------
 
 /// mk_filterDataCellType_normal情况下textField的占位符
 @property (nonatomic, copy)NSString *textFieldPlaceholder;
@@ -44,6 +66,8 @@ typedef NS_ENUM(NSInteger, mk_filterDataCellType) {
 
 /// mk_filterDataCellType_normal情况下textField最大输入长度
 @property (nonatomic, assign)NSInteger maxLength;
+
+#pragma mark ------------------------- mk_filterDataCellType_double的时候，两个textField的设置 ---------------------------------
 
 /// mk_filterDataCellType_double左侧输入框值
 @property (nonatomic, copy)NSString *leftTextFieldValue;

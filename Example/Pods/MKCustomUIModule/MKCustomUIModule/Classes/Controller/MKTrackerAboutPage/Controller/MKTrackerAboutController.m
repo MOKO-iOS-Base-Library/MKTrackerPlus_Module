@@ -5,10 +5,10 @@
 
 #import "MKTrackerAboutController.h"
 
-#import <Masonry/Masonry.h>
+#import "Masonry.h"
 
-#import <MKBaseModuleLibrary/MKMacroDefines.h>
-#import <MKBaseModuleLibrary/UIView+MKAdd.h>
+#import "MKMacroDefines.h"
+#import "UIView+MKAdd.h"
 
 @interface MKTrackerAboutController ()
 
@@ -56,6 +56,9 @@
 
 #pragma mark - ui
 - (void)loadSubViews {
+    if (![self.protocol conformsToProtocol:@protocol(MKTrackerAboutParamsProtocol)]) {
+        return;
+    }
     if (self.protocol.titleBarColor) {
         self.custom_naviBarColor = self.protocol.titleBarColor;
     }

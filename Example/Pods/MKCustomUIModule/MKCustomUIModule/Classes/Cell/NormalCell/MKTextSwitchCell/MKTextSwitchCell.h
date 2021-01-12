@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKTextSwitchCellModel : NSObject
 
+#pragma mark ------------------------- cell顶层配置 ---------------------------------
+/// 当前cell所在的index
+@property (nonatomic, assign)NSInteger index;
+
+#pragma mark ------------------------- 左侧label和icon配置 ---------------------------------
+
 /// 左侧图标
 @property (nonatomic, strong)UIImage *leftIcon;
 
@@ -24,11 +30,28 @@ NS_ASSUME_NONNULL_BEGIN
 /// 左侧msg字体大小，默认15
 @property (nonatomic, strong)UIFont *msgFont;
 
+#pragma mark ------------------------- 开关配置 ---------------------------------
+
 /// 开关状态
 @property (nonatomic, assign)BOOL isOn;
 
-/// 当前cell所在的index
-@property (nonatomic, assign)NSInteger index;
+/// 开关是否能用，默认YES
+@property (nonatomic, assign)BOOL switchEnable;
+
+#pragma mark ------------------------- 底部label配置 ---------------------------------
+
+/// 底部note标签内容
+@property (nonatomic, copy)NSString *noteMsg;
+
+/// note标签字体颜色,默认#353535
+@property (nonatomic, strong)UIColor *noteMsgColor;
+
+/// note标签字体大小,默认12
+@property (nonatomic, strong)UIFont *noteMsgFont;
+
+/// 获取当前cell的高度
+/// @param width 当前cell宽度
+- (CGFloat)cellHeightWithContentWidth:(CGFloat)width;
 
 @end
 

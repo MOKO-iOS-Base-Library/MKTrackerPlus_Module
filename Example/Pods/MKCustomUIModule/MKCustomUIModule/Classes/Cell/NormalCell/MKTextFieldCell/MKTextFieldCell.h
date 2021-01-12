@@ -24,22 +24,12 @@ typedef NS_ENUM(NSInteger, mk_textFieldCellType) {
 
 @interface MKTextFieldCellModel : NSObject
 
+#pragma mark ------------------------- cell顶层配置 ---------------------------------
 
 /// 当前index，textField内容发生改变的时候，会连同textField值和该index一起回调，可以用来标示当前是哪个cell的回调事件
 @property (nonatomic, assign)NSInteger index;
 
-#pragma mark - 右侧标签
-
-/// 最右侧的单位标签，如果该项为空则表示没有单位
-@property (nonatomic, copy)NSString *unit;
-
-/// 右侧单位标签字体颜色，默认默认#353535
-@property (nonatomic, strong)UIColor *unitColor;
-
-/// 右侧单位标签字体大小,默认13
-@property (nonatomic, strong)UIFont *unitFont;
-
-#pragma mark - 左侧label配置
+#pragma mark ------------------------- 左侧label配置 ---------------------------------
 
 /// 左侧msg
 @property (nonatomic, copy)NSString *msg;
@@ -50,7 +40,21 @@ typedef NS_ENUM(NSInteger, mk_textFieldCellType) {
 /// 左侧msg字体大小，默认15
 @property (nonatomic, strong)UIFont *msgFont;
 
-#pragma mark - textField配置
+#pragma mark ------------------------- 右侧label配置 ---------------------------------
+
+/// 最右侧的单位标签，如果该项为空则表示没有单位
+@property (nonatomic, copy)NSString *unit;
+
+/// 右侧单位标签字体颜色，默认默认#353535
+@property (nonatomic, strong)UIColor *unitColor;
+
+/// 右侧单位标签字体大小,默认13
+@property (nonatomic, strong)UIFont *unitFont;
+
+#pragma mark ------------------------- textField配置 ---------------------------------
+
+/// 是否启用输入框，默认YES
+@property (nonatomic, assign)BOOL textEnable;
 
 /// mk_textFieldCell_topLineType类型的时候，borderColor不起作用
 @property (nonatomic, assign)mk_textFieldCellType cellType;
@@ -80,6 +84,21 @@ typedef NS_ENUM(NSInteger, mk_textFieldCellType) {
 
 /// textField边框颜色,cellType=mk_textFieldCell_topLineType类型的时候，borderColor不起作用
 @property (nonatomic, strong)UIColor *borderColor;
+
+#pragma mark ------------------------- 底部label配置 ---------------------------------
+
+/// 底部note标签内容
+@property (nonatomic, copy)NSString *noteMsg;
+
+/// note标签字体颜色,默认#353535
+@property (nonatomic, strong)UIColor *noteMsgColor;
+
+/// note标签字体大小,默认12
+@property (nonatomic, strong)UIFont *noteMsgFont;
+
+/// 获取当前cell的高度
+/// @param width 当前cell宽度
+- (CGFloat)cellHeightWithContentWidth:(CGFloat)width;
 
 @end
 

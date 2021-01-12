@@ -46,7 +46,7 @@
 /// Current thread CPU usage, 1.0 means 100%. (-1 when error occurs)
 @property (nonatomic, readonly) float mk_cpuUsage;
 
-+ (void)mk_skipToHome;
++ (void)skipToHome;
 
 /**
  手机是否安装了某个应用
@@ -54,17 +54,17 @@
  @param appKey 应用的key
  @return YES:NO
  */
-+ (BOOL)mk_applicationInstall:(NSString *)appKey;
++ (BOOL)applicationInstall:(NSString *)appKey;
 
 /**
  获取当前手机系统语言环境
 
  @return language
  */
-+ (NSString *)mk_currentSystemLanguage;
++ (NSString *)currentSystemLanguage;
 
 /// 获取当前手机型号
-+ (NSString *)mk_currentIphoneType;
++ (NSString *)currentIphoneType;
 
 /**
  Increments the number of active network requests.

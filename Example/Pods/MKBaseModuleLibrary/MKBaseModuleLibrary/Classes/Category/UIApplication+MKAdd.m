@@ -113,13 +113,9 @@
 }
 
 + (NSString *)currentIphoneType {
-    
     struct utsname systemInfo;
-    
     uname(&systemInfo);
-    
     NSString * deviceString = [NSString stringWithCString: systemInfo.machine encoding:NSASCIIStringEncoding];
-    
     if([deviceString isEqualToString:@"iPhone1,1"]) return @"iPhone 2G";
     if([deviceString isEqualToString:@"iPhone1,2"]) return @"iPhone 3G";
     if([deviceString isEqualToString:@"iPhone2,1"]) return @"iPhone 3GS";
@@ -203,9 +199,7 @@
 }
 
 - (NSURL *)mk_documentsURL {
-    return [[[NSFileManager defaultManager]
-             URLsForDirectory:NSDocumentDirectory
-             inDomains:NSUserDomainMask] lastObject];
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSString *)mk_documentsPath {
@@ -213,9 +207,7 @@
 }
 
 - (NSURL *)mk_cachesURL {
-    return [[[NSFileManager defaultManager]
-             URLsForDirectory:NSCachesDirectory
-             inDomains:NSUserDomainMask] lastObject];
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSCachesDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSString *)mk_cachesPath {
@@ -223,9 +215,7 @@
 }
 
 - (NSURL *)mk_libraryURL {
-    return [[[NSFileManager defaultManager]
-             URLsForDirectory:NSLibraryDirectory
-             inDomains:NSUserDomainMask] lastObject];
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 - (NSString *)mk_libraryPath {
@@ -380,11 +370,11 @@ MKSYNTH_DYNAMIC_PROPERTY_OBJECT(networkActivityInfo, setNetworkActivityInfo, RET
     }
 }
 
-- (void)incrementNetworkActivityCount {
+- (void)mk_incrementNetworkActivityCount {
     [self _changeNetworkActivityCount:1];
 }
 
-- (void)decrementNetworkActivityCount {
+- (void)mk_decrementNetworkActivityCount {
     [self _changeNetworkActivityCount:-1];
 }
 

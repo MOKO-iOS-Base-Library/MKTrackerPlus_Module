@@ -195,46 +195,46 @@ void MK_HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
 
 @implementation UIColor (MKAdd)
 
-+ (UIColor *)colorWithHue:(CGFloat)hue
-               saturation:(CGFloat)saturation
-                lightness:(CGFloat)lightness
-                    alpha:(CGFloat)alpha {
++ (UIColor *)mk_colorWithHue:(CGFloat)hue
+                  saturation:(CGFloat)saturation
+                   lightness:(CGFloat)lightness
+                       alpha:(CGFloat)alpha {
     CGFloat r, g, b;
     MK_HSL2RGB(hue, saturation, lightness, &r, &g, &b);
     return [UIColor colorWithRed:r green:g blue:b alpha:alpha];
 }
-+ (UIColor *)colorWithCyan:(CGFloat)cyan
-                   magenta:(CGFloat)magenta
-                    yellow:(CGFloat)yellow
-                     black:(CGFloat)black
-                     alpha:(CGFloat)alpha {
++ (UIColor *)mk_colorWithCyan:(CGFloat)cyan
+                      magenta:(CGFloat)magenta
+                       yellow:(CGFloat)yellow
+                        black:(CGFloat)black
+                        alpha:(CGFloat)alpha {
     CGFloat r, g, b;
     MK_CMYK2RGB(cyan, magenta, yellow, black, &r, &g, &b);
     return [UIColor colorWithRed:r green:g blue:b alpha:alpha];
 }
 
-+ (UIColor *)colorWithRGB:(uint32_t)rgbValue {
++ (UIColor *)mk_colorWithRGB:(uint32_t)rgbValue {
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16) / 255.0f
                            green:((rgbValue & 0xFF00) >> 8) / 255.0f
                             blue:(rgbValue & 0xFF) / 255.0f
                            alpha:1];
 }
 
-+ (UIColor *)colorWithRGBA:(uint32_t)rgbaValue {
++ (UIColor *)mk_colorWithRGBA:(uint32_t)rgbaValue {
     return [UIColor colorWithRed:((rgbaValue & 0xFF000000) >> 24) / 255.0f
                            green:((rgbaValue & 0xFF0000) >> 16) / 255.0f
                             blue:((rgbaValue & 0xFF00) >> 8) / 255.0f
                            alpha:(rgbaValue & 0xFF) / 255.0f];
 }
 
-+ (UIColor *)colorWithRGB:(uint32_t)rgbValue alpha:(CGFloat)alpha {
++ (UIColor *)mk_colorWithRGB:(uint32_t)rgbValue alpha:(CGFloat)alpha {
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16) / 255.0f
                            green:((rgbValue & 0xFF00) >> 8) / 255.0f
                             blue:(rgbValue & 0xFF) / 255.0f
                            alpha:alpha];
 }
 
-- (uint32_t)rgbValue {
+- (uint32_t)mk_rgbValue {
     CGFloat r = 0, g = 0, b = 0, a = 0;
     [self getRed:&r green:&g blue:&b alpha:&a];
     int8_t red = r * 255;
@@ -243,7 +243,7 @@ void MK_HSL2HSB(CGFloat h, CGFloat s, CGFloat l,
     return (red << 16) + (green << 8) + blue;
 }
 
-- (uint32_t)rgbaValue {
+- (uint32_t)mk_rgbaValue {
     CGFloat r = 0, g = 0, b = 0, a = 0;
     [self getRed:&r green:&g blue:&b alpha:&a];
     int8_t red = r * 255;
@@ -299,15 +299,15 @@ static BOOL hexStrToRGBA(NSString *str,
     return nil;
 }
 
-- (NSString *)hexString {
-    return [self hexStringWithAlpha:NO];
+- (NSString *)mk_hexString {
+    return [self mk_hexStringWithAlpha:NO];
 }
 
 - (NSString *)hexStringWithAlpha {
-    return [self hexStringWithAlpha:YES];
+    return [self mk_hexStringWithAlpha:YES];
 }
 
-- (NSString *)hexStringWithAlpha:(BOOL)withAlpha {
+- (NSString *)mk_hexStringWithAlpha:(BOOL)withAlpha {
     CGColorRef color = self.CGColor;
     size_t count = CGColorGetNumberOfComponents(color);
     const CGFloat *components = CGColorGetComponents(color);
@@ -325,12 +325,12 @@ static BOOL hexStrToRGBA(NSString *str,
     
     if (hex && withAlpha) {
         hex = [hex stringByAppendingFormat:@"%02lx",
-               (unsigned long)(self.alpha * 255.0 + 0.5)];
+               (unsigned long)(self.mk_alpha * 255.0 + 0.5)];
     }
     return hex;
 }
 
-- (UIColor *)colorByAddColor:(UIColor *)add blendMode:(CGBlendMode)blendMode {
+- (UIColor *)mk_colorByAddColor:(UIColor *)add blendMode:(CGBlendMode)blendMode {
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGBitmapInfo bitmapInfo = kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big;
     uint8_t pixel[4] = { 0 };
@@ -345,7 +345,7 @@ static BOOL hexStrToRGBA(NSString *str,
     return [UIColor colorWithRed:pixel[0] / 255.0f green:pixel[1] / 255.0f blue:pixel[2] / 255.0f alpha:pixel[3] / 255.0f];
 }
 
-- (UIColor *)colorByChangeHue:(CGFloat)h saturation:(CGFloat)s brightness:(CGFloat)b alpha:(CGFloat)a {
+- (UIColor *)mk_colorByChangeHue:(CGFloat)h saturation:(CGFloat)s brightness:(CGFloat)b alpha:(CGFloat)a {
     CGFloat hh, ss, bb, aa;
     if (![self getHue:&hh saturation:&ss brightness:&bb alpha:&aa]) {
         return self;
@@ -362,10 +362,10 @@ static BOOL hexStrToRGBA(NSString *str,
     return [UIColor colorWithHue:hh saturation:ss brightness:bb alpha:aa];
 }
 
-- (BOOL)getHue:(CGFloat *)hue
-    saturation:(CGFloat *)saturation
-     lightness:(CGFloat *)lightness
-         alpha:(CGFloat *)alpha {
+- (BOOL)mk_getHue:(CGFloat *)hue
+       saturation:(CGFloat *)saturation
+        lightness:(CGFloat *)lightness
+            alpha:(CGFloat *)alpha {
     CGFloat r, g, b, a;
     if (![self getRed:&r green:&g blue:&b alpha:&a]) {
         return NO;
@@ -375,11 +375,11 @@ static BOOL hexStrToRGBA(NSString *str,
     return YES;
 }
 
-- (BOOL)getCyan:(CGFloat *)cyan
-        magenta:(CGFloat *)magenta
-         yellow:(CGFloat *)yellow
-          black:(CGFloat *)black
-          alpha:(CGFloat *)alpha {
+- (BOOL)mk_getCyan:(CGFloat *)cyan
+           magenta:(CGFloat *)magenta
+            yellow:(CGFloat *)yellow
+             black:(CGFloat *)black
+             alpha:(CGFloat *)alpha {
     CGFloat r, g, b, a;
     if (![self getRed:&r green:&g blue:&b alpha:&a]) {
         return NO;
@@ -389,51 +389,51 @@ static BOOL hexStrToRGBA(NSString *str,
     return YES;
 }
 
-- (CGFloat)red {
+- (CGFloat)mk_red {
     CGFloat r = 0, g, b, a;
     [self getRed:&r green:&g blue:&b alpha:&a];
     return r;
 }
 
-- (CGFloat)green {
+- (CGFloat)mk_green {
     CGFloat r, g = 0, b, a;
     [self getRed:&r green:&g blue:&b alpha:&a];
     return g;
 }
 
-- (CGFloat)blue {
+- (CGFloat)mk_blue {
     CGFloat r, g, b = 0, a;
     [self getRed:&r green:&g blue:&b alpha:&a];
     return b;
 }
 
-- (CGFloat)alpha {
+- (CGFloat)mk_alpha {
     return CGColorGetAlpha(self.CGColor);
 }
 
-- (CGFloat)hue {
+- (CGFloat)mk_hue {
     CGFloat h = 0, s, b, a;
     [self getHue:&h saturation:&s brightness:&b alpha:&a];
     return h;
 }
 
-- (CGFloat)saturation {
+- (CGFloat)mk_saturation {
     CGFloat h, s = 0, b, a;
     [self getHue:&h saturation:&s brightness:&b alpha:&a];
     return s;
 }
 
-- (CGFloat)brightness {
+- (CGFloat)mk_brightness {
     CGFloat h, s, b = 0, a;
     [self getHue:&h saturation:&s brightness:&b alpha:&a];
     return b;
 }
 
-- (CGColorSpaceModel)colorSpaceModel {
+- (CGColorSpaceModel)mk_colorSpaceModel {
     return CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
 }
 
-- (NSString *)colorSpaceString {
+- (NSString *)mk_colorSpaceString {
     CGColorSpaceModel model =  CGColorSpaceGetModel(CGColorGetColorSpace(self.CGColor));
     switch (model) {
         case kCGColorSpaceModelUnknown:

@@ -7,10 +7,12 @@
 //
 
 #import "MKProgressView.h"
+
 #import "CircleProgressBar.h"
 #import "Masonry.h"
+
 #import "MKMacroDefines.h"
-#import "MKCategoryModule.h"
+#import "NSString+MKAdd.h"
 
 static CGFloat const defaultProgressViewHeight = 270.f;
 static CGFloat const topOffset = 20.f;

@@ -10,9 +10,15 @@
 #endif
 #endif
 
+#import "MKLoRaAdvancedSettingCell.h"
 #import "MKFilterDataCell.h"
+#import "MKFilterRawAdvDataCell.h"
+#import "MKLoRaSettingCHCell.h"
 #import "MKLoraDeviceTypeCell.h"
 #import "MKMeasureTxPowerCell.h"
+#import "MKMixedChoiceCell.h"
+#import "MKRawAdvDataOperationCell.h"
+#import "MKNormalSliderCell.h"
 #import "MKNormalTextCell.h"
 #import "MKTextButtonCell.h"
 #import "MKTextFieldCell.h"

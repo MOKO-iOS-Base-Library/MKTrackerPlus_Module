@@ -60,6 +60,22 @@
     return resultString;
 }
 
++ (CGFloat)strHeightForAttributeStr:(NSAttributedString *)string viewWidth:(CGFloat)viewWidth {
+    if (string.length == 0) {
+        return 0;
+    }
+    CGSize size  = [string boundingRectWithSize:CGSizeMake(viewWidth, MAXFLOAT) options: NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading  context:nil].size;
+    return ceil(size.height);
+}
+ 
++ (CGFloat)strWidthForAttributeStr:(NSAttributedString *)string viewHeight:(CGFloat)viewHeight {
+    if (string.length == 0) {
+        return 0;
+    }
+    CGSize size  = [string boundingRectWithSize:CGSizeMake(MAXFLOAT, viewHeight) options: NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil].size;
+    return ceil(size.width);
+}
+
 + (CABasicAnimation *)refreshAnimation:(NSTimeInterval)duration {
     CABasicAnimation *transformAnima = [CABasicAnimation animationWithKeyPath:@"transform.rotation.z"];
     transformAnima.duration = duration;
