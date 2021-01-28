@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'MKTrackerPlus'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'MokoTracker+ APP重新做了组件化处理'
 
   s.homepage         = 'https://github.com/MOKO-iOS-Base-Library/MKTrackerPlus_Module'

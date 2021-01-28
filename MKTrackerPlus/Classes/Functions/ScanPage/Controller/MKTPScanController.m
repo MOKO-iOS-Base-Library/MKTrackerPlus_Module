@@ -428,7 +428,7 @@ MKTPTabBarControllerDelegate>
             //对于V2版本固件来说，进入通用设置页面
             [self.view showCentralToast:@"Time sync completed!"];
             [MKTPDatabaseManager clearDataTable];
-            [MKTPDatabaseManager initStepDataBase];
+            [MKTPDatabaseManager initDataBase];
             [self performSelector:@selector(pushTabBarPage) withObject:nil afterDelay:0.6f];
         }else {
             //对于V1版本固件来说，需要进入dfu升级页面

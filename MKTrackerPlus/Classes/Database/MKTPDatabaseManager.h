@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface MKTPDatabaseManager : NSObject
 
-+ (BOOL)initStepDataBase;
++ (BOOL)initDataBase;
 
 + (void)insertDataList:(NSArray <NSDictionary *>*)dataList
               sucBlock:(void (^)(void))sucBlock

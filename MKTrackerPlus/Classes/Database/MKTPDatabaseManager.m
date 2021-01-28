@@ -14,7 +14,7 @@
 
 @implementation MKTPDatabaseManager
 
-+ (BOOL)initStepDataBase {
++ (BOOL)initDataBase {
     FMDatabase* db = [FMDatabase databaseWithPath:kFilePath(@"trackerDB")];
     if (![db open]) {
         return NO;

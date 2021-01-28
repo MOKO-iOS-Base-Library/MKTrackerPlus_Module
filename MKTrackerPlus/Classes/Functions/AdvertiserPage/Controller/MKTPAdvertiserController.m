@@ -254,7 +254,6 @@ MKTPAdvTriggerCellDelegate>
     uuidModel.msg = @"UUID";
     uuidModel.textPlaceholder = @"16 Bytes";
     uuidModel.textFieldType = mk_uuidMode;
-    uuidModel.maxLength = 36;
     uuidModel.index = 1;
     [self.section0List addObject:uuidModel];
     

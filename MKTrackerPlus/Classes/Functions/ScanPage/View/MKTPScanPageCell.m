@@ -105,7 +105,7 @@ static CGFloat const valueLabelWidth = 130.f;
 - (UIImageView *)rssiIcon {
     if (!_rssiIcon) {
         _rssiIcon = [[UIImageView alloc] init];
-        _rssiIcon.image = LOADICON(@"MKTrackerPlus", @"MKTPScanPageCell", @"tp_scan_signalIcon");
+        _rssiIcon.image = LOADICON(@"MKTrackerPlus", @"MKTPScanPageCell", @"tp_scan_signalIcon.png");
     }
     return _rssiIcon;
 }
