@@ -139,7 +139,7 @@ static CGFloat const selectButtonHeight = 30.f;
 - (void)setDataModel:(MKTextButtonCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel) {
+    if (!_dataModel || _dataModel.dataListIndex >= _dataModel.dataList.count) {
         return;
     }
     self.msgLabel.text = SafeStr(_dataModel.msg);

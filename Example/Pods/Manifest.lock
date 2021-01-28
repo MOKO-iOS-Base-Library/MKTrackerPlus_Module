@@ -51,72 +51,72 @@ PODS:
   - MKBaseModuleLibrary/Tools/MKClassInfo (1.0.11)
   - MKBaseModuleLibrary/Tools/MKDateFormatter (1.0.11)
   - MKBaseModuleLibrary/Tools/MKModuleManager (1.0.11)
-  - MKCustomUIModule (1.0.13):
+  - MKCustomUIModule (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell (= 1.0.13)
-    - MKCustomUIModule/Controller (= 1.0.13)
-    - MKCustomUIModule/UIAdopter (= 1.0.13)
-    - MKCustomUIModule/View (= 1.0.13)
-  - MKCustomUIModule/Cell (1.0.13):
+    - MKCustomUIModule/Cell (= 1.0.17)
+    - MKCustomUIModule/Controller (= 1.0.17)
+    - MKCustomUIModule/UIAdopter (= 1.0.17)
+    - MKCustomUIModule/View (= 1.0.17)
+  - MKCustomUIModule/Cell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell (= 1.0.13)
-    - MKCustomUIModule/Cell/NormalCell (= 1.0.13)
-  - MKCustomUIModule/Cell/LoRaCell (1.0.13):
+    - MKCustomUIModule/Cell/LoRaCell (= 1.0.17)
+    - MKCustomUIModule/Cell/NormalCell (= 1.0.17)
+  - MKCustomUIModule/Cell/LoRaCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 1.0.13)
-    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 1.0.13)
-  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (1.0.13):
+    - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (= 1.0.17)
+    - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (= 1.0.17)
+  - MKCustomUIModule/Cell/LoRaCell/MKAdvancedSettingCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (1.0.13):
-    - CircleProgressBar
-    - Masonry
-    - MBProgressHUD
-    - MJRefresh
-    - MKBaseModuleLibrary
-    - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (1.0.13):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterDataCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (1.0.13):
+  - MKCustomUIModule/Cell/LoRaCell/MKFilterRawAdvDataCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (1.0.13):
+    - MKCustomUIModule/View/MKTextField
+  - MKCustomUIModule/Cell/LoRaCell/MKLoraDeviceTypeCell (1.0.17):
+    - CircleProgressBar
+    - Masonry
+    - MBProgressHUD
+    - MJRefresh
+    - MKBaseModuleLibrary
+  - MKCustomUIModule/Cell/LoRaCell/MKLoRaSettingCHCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (1.0.13):
+  - MKCustomUIModule/Cell/LoRaCell/MKMeasureTxPowerCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -124,30 +124,30 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (1.0.13):
+  - MKCustomUIModule/Cell/LoRaCell/MKMixedChoiceCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (1.0.13):
+  - MKCustomUIModule/Cell/LoRaCell/MKRawAdvDataOperationCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell (1.0.13):
+  - MKCustomUIModule/Cell/NormalCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 1.0.13)
-    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 1.0.13)
-    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 1.0.13)
-    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 1.0.13)
-    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 1.0.13)
-  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (1.0.13):
+    - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (= 1.0.17)
+    - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (= 1.0.17)
+    - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (= 1.0.17)
+    - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (= 1.0.17)
+    - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (= 1.0.17)
+  - MKCustomUIModule/Cell/NormalCell/MKNormalSliderCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -155,132 +155,132 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (1.0.13):
+  - MKCustomUIModule/Cell/NormalCell/MKNormalTextCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (1.0.13):
+  - MKCustomUIModule/Cell/NormalCell/MKTextButtonCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKPickerView
-  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (1.0.13):
+  - MKCustomUIModule/Cell/NormalCell/MKTextFieldCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/View/MKTextField
-  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (1.0.13):
+  - MKCustomUIModule/Cell/NormalCell/MKTextSwitchCell (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller (1.0.13):
+  - MKCustomUIModule/Controller (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.0.13)
-    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.0.13)
-  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.0.13):
+    - MKCustomUIModule/Controller/MKTrackerAboutPage (= 1.0.17)
+    - MKCustomUIModule/Controller/MKTrackerLogPage (= 1.0.17)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.0.13)
-  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.0.13):
+    - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (= 1.0.17)
+  - MKCustomUIModule/Controller/MKTrackerAboutPage/Controller (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/Controller/MKTrackerLogPage (1.0.13):
+  - MKCustomUIModule/Controller/MKTrackerLogPage (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.0.13)
-  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.0.13):
+    - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (= 1.0.17)
+  - MKCustomUIModule/Controller/MKTrackerLogPage/Controller (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/UIAdopter (1.0.13):
+  - MKCustomUIModule/UIAdopter (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View (1.0.13):
+  - MKCustomUIModule/View (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-    - MKCustomUIModule/View/HaveRefreshView (= 1.0.13)
-    - MKCustomUIModule/View/MKHexKeyBoard (= 1.0.13)
-    - MKCustomUIModule/View/MKHudManager (= 1.0.13)
-    - MKCustomUIModule/View/MKPageControl (= 1.0.13)
-    - MKCustomUIModule/View/MKPickerView (= 1.0.13)
-    - MKCustomUIModule/View/MKProgressView (= 1.0.13)
-    - MKCustomUIModule/View/MKSearchButton (= 1.0.13)
-    - MKCustomUIModule/View/MKSearchConditionsView (= 1.0.13)
-    - MKCustomUIModule/View/MKSlider (= 1.0.13)
-    - MKCustomUIModule/View/MKTextField (= 1.0.13)
-  - MKCustomUIModule/View/HaveRefreshView (1.0.13):
+    - MKCustomUIModule/View/HaveRefreshView (= 1.0.17)
+    - MKCustomUIModule/View/MKHexKeyBoard (= 1.0.17)
+    - MKCustomUIModule/View/MKHudManager (= 1.0.17)
+    - MKCustomUIModule/View/MKPageControl (= 1.0.17)
+    - MKCustomUIModule/View/MKPickerView (= 1.0.17)
+    - MKCustomUIModule/View/MKProgressView (= 1.0.17)
+    - MKCustomUIModule/View/MKSearchButton (= 1.0.17)
+    - MKCustomUIModule/View/MKSearchConditionsView (= 1.0.17)
+    - MKCustomUIModule/View/MKSlider (= 1.0.17)
+    - MKCustomUIModule/View/MKTextField (= 1.0.17)
+  - MKCustomUIModule/View/HaveRefreshView (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKHexKeyBoard (1.0.13):
+  - MKCustomUIModule/View/MKHexKeyBoard (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKHudManager (1.0.13):
+  - MKCustomUIModule/View/MKHudManager (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPageControl (1.0.13):
+  - MKCustomUIModule/View/MKPageControl (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKPickerView (1.0.13):
+  - MKCustomUIModule/View/MKPickerView (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
-  - MKCustomUIModule/View/MKProgressView (1.0.13):
+  - MKCustomUIModule/View/MKProgressView (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchButton (1.0.13):
+  - MKCustomUIModule/View/MKSearchButton (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKSearchConditionsView (1.0.13):
+  - MKCustomUIModule/View/MKSearchConditionsView (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
@@ -288,19 +288,19 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule/UIAdopter
     - MKCustomUIModule/View/MKSlider
-  - MKCustomUIModule/View/MKSlider (1.0.13):
+  - MKCustomUIModule/View/MKSlider (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKCustomUIModule/View/MKTextField (1.0.13):
+  - MKCustomUIModule/View/MKTextField (1.0.17):
     - CircleProgressBar
     - Masonry
     - MBProgressHUD
     - MJRefresh
     - MKBaseModuleLibrary
-  - MKTrackerPlus (1.0.0):
+  - MKTrackerPlus (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -308,24 +308,15 @@ PODS:
     - MKBaseBleModule
     - MKBaseModuleLibrary
     - MKCustomUIModule
-    - MKTrackerPlus/ApplicationModule (= 1.0.0)
-    - MKTrackerPlus/CTMediator (= 1.0.0)
-    - MKTrackerPlus/Database (= 1.0.0)
-    - MKTrackerPlus/DeviceTypeManager (= 1.0.0)
-    - MKTrackerPlus/Functions (= 1.0.0)
-    - MKTrackerPlus/SDK-TP (= 1.0.0)
-    - MKTrackerPlus/Target (= 1.0.0)
+    - MKTrackerPlus/ApplicationModule (= 1.0.1)
+    - MKTrackerPlus/CTMediator (= 1.0.1)
+    - MKTrackerPlus/Database (= 1.0.1)
+    - MKTrackerPlus/DeviceTypeManager (= 1.0.1)
+    - MKTrackerPlus/Functions (= 1.0.1)
+    - MKTrackerPlus/SDK-TP (= 1.0.1)
+    - MKTrackerPlus/Target (= 1.0.1)
     - MLInputDodger
-  - MKTrackerPlus/ApplicationModule (1.0.0):
-    - CTMediator
-    - FMDB
-    - HHTransition
-    - iOSDFULibrary (= 4.6.1)
-    - MKBaseBleModule
-    - MKBaseModuleLibrary
-    - MKCustomUIModule
-    - MLInputDodger
-  - MKTrackerPlus/CTMediator (1.0.0):
+  - MKTrackerPlus/ApplicationModule (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -334,7 +325,7 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKTrackerPlus/Database (1.0.0):
+  - MKTrackerPlus/CTMediator (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -343,7 +334,16 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKTrackerPlus/DeviceTypeManager (1.0.0):
+  - MKTrackerPlus/Database (1.0.1):
+    - CTMediator
+    - FMDB
+    - HHTransition
+    - iOSDFULibrary (= 4.6.1)
+    - MKBaseBleModule
+    - MKBaseModuleLibrary
+    - MKCustomUIModule
+    - MLInputDodger
+  - MKTrackerPlus/DeviceTypeManager (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -353,7 +353,7 @@ PODS:
     - MKCustomUIModule
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions (1.0.0):
+  - MKTrackerPlus/Functions (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -364,18 +364,18 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/AdvertiserPage (= 1.0.0)
-    - MKTrackerPlus/Functions/DeviceInfoPage (= 1.0.0)
-    - MKTrackerPlus/Functions/FilterOptionsPage (= 1.0.0)
-    - MKTrackerPlus/Functions/ScanPage (= 1.0.0)
-    - MKTrackerPlus/Functions/SettingPage (= 1.0.0)
-    - MKTrackerPlus/Functions/TabBarPage (= 1.0.0)
-    - MKTrackerPlus/Functions/TrackerConfigPage (= 1.0.0)
-    - MKTrackerPlus/Functions/TrackerDataPage (= 1.0.0)
-    - MKTrackerPlus/Functions/UpdatePage (= 1.0.0)
+    - MKTrackerPlus/Functions/AdvertiserPage (= 1.0.1)
+    - MKTrackerPlus/Functions/DeviceInfoPage (= 1.0.1)
+    - MKTrackerPlus/Functions/FilterOptionsPage (= 1.0.1)
+    - MKTrackerPlus/Functions/ScanPage (= 1.0.1)
+    - MKTrackerPlus/Functions/SettingPage (= 1.0.1)
+    - MKTrackerPlus/Functions/TabBarPage (= 1.0.1)
+    - MKTrackerPlus/Functions/TrackerConfigPage (= 1.0.1)
+    - MKTrackerPlus/Functions/TrackerDataPage (= 1.0.1)
+    - MKTrackerPlus/Functions/UpdatePage (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/AdvertiserPage (1.0.0):
+  - MKTrackerPlus/Functions/AdvertiserPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -386,12 +386,12 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/AdvertiserPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/AdvertiserPage/Model (= 1.0.0)
-    - MKTrackerPlus/Functions/AdvertiserPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/AdvertiserPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/AdvertiserPage/Model (= 1.0.1)
+    - MKTrackerPlus/Functions/AdvertiserPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/AdvertiserPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/AdvertiserPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -406,7 +406,7 @@ PODS:
     - MKTrackerPlus/Functions/AdvertiserPage/View
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/AdvertiserPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/AdvertiserPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -419,7 +419,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/AdvertiserPage/View (1.0.0):
+  - MKTrackerPlus/Functions/AdvertiserPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -432,7 +432,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/DeviceInfoPage (1.0.0):
+  - MKTrackerPlus/Functions/DeviceInfoPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -443,11 +443,11 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/DeviceInfoPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/DeviceInfoPage/Model (= 1.0.0)
+    - MKTrackerPlus/Functions/DeviceInfoPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/DeviceInfoPage/Model (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/DeviceInfoPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/DeviceInfoPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -461,7 +461,7 @@ PODS:
     - MKTrackerPlus/Functions/DeviceInfoPage/Model
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/DeviceInfoPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/DeviceInfoPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -474,7 +474,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/FilterOptionsPage (1.0.0):
+  - MKTrackerPlus/Functions/FilterOptionsPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -485,12 +485,12 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/FilterOptionsPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/FilterOptionsPage/Model (= 1.0.0)
-    - MKTrackerPlus/Functions/FilterOptionsPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/FilterOptionsPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/FilterOptionsPage/Model (= 1.0.1)
+    - MKTrackerPlus/Functions/FilterOptionsPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/FilterOptionsPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/FilterOptionsPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -505,7 +505,7 @@ PODS:
     - MKTrackerPlus/Functions/FilterOptionsPage/View
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/FilterOptionsPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/FilterOptionsPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -518,7 +518,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/FilterOptionsPage/View (1.0.0):
+  - MKTrackerPlus/Functions/FilterOptionsPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -531,7 +531,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/ScanPage (1.0.0):
+  - MKTrackerPlus/Functions/ScanPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -542,12 +542,12 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/ScanPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/ScanPage/Model (= 1.0.0)
-    - MKTrackerPlus/Functions/ScanPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/ScanPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/ScanPage/Model (= 1.0.1)
+    - MKTrackerPlus/Functions/ScanPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/ScanPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/ScanPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -564,7 +564,7 @@ PODS:
     - MKTrackerPlus/Functions/UpdatePage
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/ScanPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/ScanPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -577,7 +577,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/ScanPage/View (1.0.0):
+  - MKTrackerPlus/Functions/ScanPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -591,7 +591,7 @@ PODS:
     - MKTrackerPlus/Functions/ScanPage/Model
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/SettingPage (1.0.0):
+  - MKTrackerPlus/Functions/SettingPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -602,12 +602,12 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/SettingPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/SettingPage/Model (= 1.0.0)
-    - MKTrackerPlus/Functions/SettingPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/SettingPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/SettingPage/Model (= 1.0.1)
+    - MKTrackerPlus/Functions/SettingPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/SettingPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/SettingPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -623,7 +623,7 @@ PODS:
     - MKTrackerPlus/Functions/UpdatePage
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/SettingPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/SettingPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -636,7 +636,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/SettingPage/View (1.0.0):
+  - MKTrackerPlus/Functions/SettingPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -649,7 +649,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TabBarPage (1.0.0):
+  - MKTrackerPlus/Functions/TabBarPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -660,10 +660,10 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/TabBarPage/Controller (= 1.0.0)
+    - MKTrackerPlus/Functions/TabBarPage/Controller (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TabBarPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/TabBarPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -680,7 +680,7 @@ PODS:
     - MKTrackerPlus/Functions/TrackerConfigPage
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerConfigPage (1.0.0):
+  - MKTrackerPlus/Functions/TrackerConfigPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -691,12 +691,12 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/TrackerConfigPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/TrackerConfigPage/Model (= 1.0.0)
-    - MKTrackerPlus/Functions/TrackerConfigPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/TrackerConfigPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/TrackerConfigPage/Model (= 1.0.1)
+    - MKTrackerPlus/Functions/TrackerConfigPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerConfigPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/TrackerConfigPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -713,7 +713,7 @@ PODS:
     - MKTrackerPlus/Functions/TrackerDataPage
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerConfigPage/Model (1.0.0):
+  - MKTrackerPlus/Functions/TrackerConfigPage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -726,7 +726,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerConfigPage/View (1.0.0):
+  - MKTrackerPlus/Functions/TrackerConfigPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -739,7 +739,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerDataPage (1.0.0):
+  - MKTrackerPlus/Functions/TrackerDataPage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -750,11 +750,11 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/TrackerDataPage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/TrackerDataPage/View (= 1.0.0)
+    - MKTrackerPlus/Functions/TrackerDataPage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/TrackerDataPage/View (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerDataPage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/TrackerDataPage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -768,7 +768,7 @@ PODS:
     - MKTrackerPlus/Functions/TrackerDataPage/View
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/TrackerDataPage/View (1.0.0):
+  - MKTrackerPlus/Functions/TrackerDataPage/View (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -781,7 +781,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/UpdatePage (1.0.0):
+  - MKTrackerPlus/Functions/UpdatePage (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -792,11 +792,11 @@ PODS:
     - MKTrackerPlus/CTMediator
     - MKTrackerPlus/Database
     - MKTrackerPlus/DeviceTypeManager
-    - MKTrackerPlus/Functions/UpdatePage/Controller (= 1.0.0)
-    - MKTrackerPlus/Functions/UpdatePage/Model (= 1.0.0)
+    - MKTrackerPlus/Functions/UpdatePage/Controller (= 1.0.1)
+    - MKTrackerPlus/Functions/UpdatePage/Model (= 1.0.1)
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/UpdatePage/Controller (1.0.0):
+  - MKTrackerPlus/Functions/UpdatePage/Controller (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -810,7 +810,7 @@ PODS:
     - MKTrackerPlus/Functions/UpdatePage/Model
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/Functions/UpdatePage/Model (1.0.0):
+  - MKTrackerPlus/Functions/UpdatePage/Model (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -823,7 +823,7 @@ PODS:
     - MKTrackerPlus/DeviceTypeManager
     - MKTrackerPlus/SDK-TP
     - MLInputDodger
-  - MKTrackerPlus/SDK-TP (1.0.0):
+  - MKTrackerPlus/SDK-TP (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -832,7 +832,7 @@ PODS:
     - MKBaseModuleLibrary
     - MKCustomUIModule
     - MLInputDodger
-  - MKTrackerPlus/Target (1.0.0):
+  - MKTrackerPlus/Target (1.0.1):
     - CTMediator
     - FMDB
     - HHTransition
@@ -881,8 +881,8 @@ SPEC CHECKSUMS:
   MJRefresh: 6afc955813966afb08305477dd7a0d9ad5e79a16
   MKBaseBleModule: ab876657390779fcf62de2ce0494698fa7438b17
   MKBaseModuleLibrary: 7fb73829fe9bef794deeb4484ec80256c03a95e6
-  MKCustomUIModule: d351dac114be6bf021c9fecf9190cb69c98c7a26
-  MKTrackerPlus: 4ca6e7904dd46612413bd3620c16680190922114
+  MKCustomUIModule: 2b9fda55300ba251a782501807a13e963d2ecf66
+  MKTrackerPlus: b45899043b026ab71707874798c5c2477fd784f1
   MLInputDodger: 79a0e420a80d0d3bba122bf2639603cc76609ba8
   Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
   ZIPFoundation: 89df685c971926b0323087952320bdfee9f0b6ef

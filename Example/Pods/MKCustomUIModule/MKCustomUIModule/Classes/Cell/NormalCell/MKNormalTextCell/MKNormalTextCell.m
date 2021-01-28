@@ -122,7 +122,7 @@ static CGFloat const offset_X = 15.f;
             make.right.mas_equalTo(-15.f);
         }
         make.left.mas_equalTo(self.contentView.mas_centerX).mas_offset(-2.f);
-        make.centerY.mas_equalTo(self.rightIcon.mas_centerY);
+        make.centerY.mas_equalTo(self.leftMsgLabel.mas_centerY);
         make.height.mas_equalTo(self.rightMsgLabel.font.lineHeight);
     }];
     CGSize noteSize = [self noteSize];

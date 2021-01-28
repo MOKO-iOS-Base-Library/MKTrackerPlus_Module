@@ -151,11 +151,26 @@
 }
 
 #pragma mark - event method
+- (void)leftTextFieldValueChanged:(NSString *)text {
+    if (self.leftCallback) {
+        self.leftCallback(text);
+    }
+}
+
+- (void)rightTextFieldValueChanged:(NSString *)text {
+    if (self.rightCallback) {
+        self.rightCallback(text);
+    }
+}
 
 #pragma mark - getter
 - (MKFilterNormalTextView *)leftTextField {
     if (!_leftTextField) {
-        MKTextField *textField = [self loadTextFieldWithCallback:self.leftCallback];
+        WS(weakSelf);
+        MKTextField *textField = [self loadTextFieldWithCallback:^(NSString *text) {
+            __strong typeof(self) sself = weakSelf;
+            [sself leftTextFieldValueChanged:text];
+        }];
         _leftTextField = [[MKFilterNormalTextView alloc] initWithTextField:textField];
     }
     return _leftTextField;
@@ -163,7 +178,11 @@
 
 - (MKFilterNormalTextView *)rightTextField {
     if (!_rightTextField) {
-        MKTextField *textField = [self loadTextFieldWithCallback:self.rightCallback];
+        WS(weakSelf);
+        MKTextField *textField = [self loadTextFieldWithCallback:^(NSString *text) {
+            __strong typeof(self) sself = weakSelf;
+            [sself rightTextFieldValueChanged:text];
+        }];
         _rightTextField = [[MKFilterNormalTextView alloc] initWithTextField:textField];
     }
     return _rightTextField;

@@ -1,9 +1,7 @@
-//
-//  MKPickerView.h
-//  mokoLibrary
-//
-//  Created by aa on 2020/10/7.
-//
+/*
+ 抛出mk_customUIModule_dismissPickView通知可以让当前pickView消失
+ [[NSNotificationCenter defaultCenter] postNotificationName:@"mk_customUIModule_dismissPickView" object:nil];
+*/
 
 #import <UIKit/UIKit.h>
 

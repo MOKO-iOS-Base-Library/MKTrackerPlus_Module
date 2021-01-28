@@ -47,8 +47,17 @@ NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ------------------------- 底部label配置 ---------------------------------
 
-/// 底部note标签内容
+/// 是否动态改变底部note
+@property (nonatomic, assign)BOOL changed;
+
+/// 底部note标签内容.(changed = NO)
 @property (nonatomic, copy)NSString *noteMsg;
+
+/// 底部note标签内容是leftNoteMsg + 滑竿值+单位+rightNoteMsg.(changed = YES)
+@property (nonatomic, copy)NSString *leftNoteMsg;
+
+/// 底部note标签内容是leftNoteMsg + 滑竿值+单位+rightNoteMsg.(changed = YES)
+@property (nonatomic, copy)NSString *rightNoteMsg;
 
 /// note标签字体颜色,默认#353535
 @property (nonatomic, strong)UIColor *noteMsgColor;

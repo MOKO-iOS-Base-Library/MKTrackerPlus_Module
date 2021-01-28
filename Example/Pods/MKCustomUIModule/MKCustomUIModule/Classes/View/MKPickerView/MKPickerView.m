@@ -38,6 +38,10 @@ static CGFloat const pickViewRowHeight = 30;
         [self addSubview:self.bottomView];
         [self.bottomView addSubview:self.pickView];
         [self addTapAction];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(dismiss)
+                                                     name:@"mk_customUIModule_dismissPickView"
+                                                   object:nil];
     }
     return self;
 }

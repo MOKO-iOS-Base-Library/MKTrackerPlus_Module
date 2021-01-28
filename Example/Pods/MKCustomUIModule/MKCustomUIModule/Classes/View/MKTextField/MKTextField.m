@@ -96,7 +96,9 @@
             }
         }
         self.inputLen = self.text.length;
-        
+        if (self.changedBlock) {
+            self.changedBlock(self.text);
+        }
     }else if (self.text.length < self.inputLen){//删除
         if (self.text.length == 9
             || self.text.length == 14
@@ -108,6 +110,9 @@
             }
         }
         self.inputLen = self.text.length;
+        if (self.changedBlock) {
+            self.changedBlock(self.text);
+        }
     }
 }
 

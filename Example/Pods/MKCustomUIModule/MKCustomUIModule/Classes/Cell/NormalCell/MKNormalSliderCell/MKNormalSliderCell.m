@@ -42,15 +42,19 @@ static CGFloat const offset_Y = 10.f;
     }
     CGFloat msgHeight = [MKCustomUIAdopter strHeightForAttributeStr:self.msg viewWidth:width];
     CGFloat heightWithoutNote = msgHeight + 3 * offset_Y + 5.f;
-    if (!ValidStr(self.noteMsg)) {
+    if (!self.changed && !ValidStr(self.noteMsg)) {
         return MAX(heightWithoutNote, 55);
     }
     //存在底部的note
     UIFont *noteFont = (self.noteMsgFont ? self.noteMsgFont : MKFont(12.f));
-    CGSize noteSize = [NSString sizeWithText:self.noteMsg
+    NSString *tempNoteMsg = self.noteMsg;
+    if (self.changed) {
+        tempNoteMsg = [NSString stringWithFormat:@"%@ %@%@ %@",SafeStr(self.leftNoteMsg),[NSString stringWithFormat:@"%ld",(long)self.sliderMaxValue],SafeStr(self.unit),SafeStr(self.rightNoteMsg)];
+    }
+    CGSize noteSize = [NSString sizeWithText:tempNoteMsg
                                      andFont:noteFont
                                   andMaxSize:CGSizeMake(width - 2 * offset_X, MAXFLOAT)];
-    return MAX(heightWithoutNote, 55) + noteSize.height + 10.f;
+    return MAX(heightWithoutNote, 55) + noteSize.height + 15.f;
 }
 
 @end
@@ -123,6 +127,11 @@ static CGFloat const offset_Y = 10.f;
         value = @"0";
     }
     self.sliderValueLabel.text = [value stringByAppendingString:self.dataModel.unit];
+    
+    if (self.dataModel.changed) {
+        self.noteLabel.text = [NSString stringWithFormat:@"%@ %@ %@",SafeStr(_dataModel.leftNoteMsg),[value stringByAppendingString:self.dataModel.unit],SafeStr(_dataModel.rightNoteMsg)];
+    }
+    
     if ([self.delegate respondsToSelector:@selector(mk_normalSliderValueChanged:index:)]) {
         [self.delegate mk_normalSliderValueChanged:[value integerValue] index:self.dataModel.index];
     }
@@ -149,7 +158,12 @@ static CGFloat const offset_Y = 10.f;
     self.sliderValueLabel.text = [NSString stringWithFormat:@"%ld%@",(long)_dataModel.sliderValue,_dataModel.unit];
     self.sliderValueLabel.textColor = (_dataModel.unitColor ? _dataModel.unitColor : DEFAULT_TEXT_COLOR);
     self.sliderValueLabel.font = (_dataModel.unitFont ? _dataModel.unitFont : MKFont(11.f));
-    self.noteLabel.text = SafeStr(_dataModel.noteMsg);
+    if (_dataModel.changed) {
+        //left+value+unit+right
+        self.noteLabel.text = [NSString stringWithFormat:@"%@ %@%@ %@",SafeStr(_dataModel.leftNoteMsg),[NSString stringWithFormat:@"%ld",(long)_dataModel.sliderValue],SafeStr(_dataModel.unit),SafeStr(_dataModel.rightNoteMsg)];
+    }else {
+        self.noteLabel.text = SafeStr(_dataModel.noteMsg);
+    }
     self.noteLabel.font = (_dataModel.noteMsgFont ? _dataModel.noteMsgFont : MKFont(12.f));
     self.noteLabel.textColor = (_dataModel.noteMsgColor ? _dataModel.noteMsgColor : DEFAULT_TEXT_COLOR);
     [self setNeedsLayout];

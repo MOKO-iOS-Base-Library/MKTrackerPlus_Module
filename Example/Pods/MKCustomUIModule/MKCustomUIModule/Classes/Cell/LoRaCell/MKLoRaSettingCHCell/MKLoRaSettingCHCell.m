@@ -118,9 +118,16 @@ static CGFloat const msgLabelWidth = 100.f;
     if (!ValidArray(self.dataModel.chLowValueList)) {
         return;
     }
+    NSInteger index = 0;
+    for (NSInteger i = 0; i < self.dataModel.chLowValueList.count; i ++) {
+        if ([self.chLowButton.titleLabel.text isEqualToString:self.dataModel.chLowValueList[i]]) {
+            index = i;
+            break;
+        }
+    }
     MKPickerView *pickView = [[MKPickerView alloc] init];
     pickView.dataList = self.dataModel.chLowValueList;
-    [pickView showPickViewWithIndex:self.dataModel.chLowIndex block:^(NSInteger currentRow) {
+    [pickView showPickViewWithIndex:index block:^(NSInteger currentRow) {
         [self.chLowButton setTitle:self.dataModel.chLowValueList[currentRow] forState:UIControlStateNormal];
         self.dataModel.chLowIndex = currentRow;
         if ([self.delegate respondsToSelector:@selector(mk_loraSetting_chLowValueChanged:chLowIndex:cellIndex:)]) {
@@ -135,9 +142,16 @@ static CGFloat const msgLabelWidth = 100.f;
     if (!ValidArray(self.dataModel.chHighValueList)) {
         return;
     }
+    NSInteger index = 0;
+    for (NSInteger i = 0; i < self.dataModel.chHighValueList.count; i ++) {
+        if ([self.chHighButton.titleLabel.text isEqualToString:self.dataModel.chHighValueList[i]]) {
+            index = i;
+            break;
+        }
+    }
     MKPickerView *pickView = [[MKPickerView alloc] init];
     pickView.dataList = self.dataModel.chHighValueList;
-    [pickView showPickViewWithIndex:self.dataModel.chHighIndex block:^(NSInteger currentRow) {
+    [pickView showPickViewWithIndex:index block:^(NSInteger currentRow) {
         [self.chHighButton setTitle:self.dataModel.chHighValueList[currentRow] forState:UIControlStateNormal];
         self.dataModel.chHighIndex = currentRow;
         if ([self.delegate respondsToSelector:@selector(mk_loraSetting_chHighValueChanged:chHighIndex:cellIndex:)]) {

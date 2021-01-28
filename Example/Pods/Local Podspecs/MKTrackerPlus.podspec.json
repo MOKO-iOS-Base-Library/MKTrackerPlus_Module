@@ -1,6 +1,6 @@
 {
   "name": "MKTrackerPlus",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "summary": "MokoTracker+ APP重新做了组件化处理",
   "homepage": "https://github.com/MOKO-iOS-Base-Library/MKTrackerPlus_Module",
   "license": {
@@ -12,7 +12,7 @@
   },
   "source": {
     "git": "https://github.com/MOKO-iOS-Base-Library/MKTrackerPlus_Module.git",
-    "tag": "1.0.0"
+    "tag": "1.0.1"
   },
   "platforms": {
     "ios": "12.0"
