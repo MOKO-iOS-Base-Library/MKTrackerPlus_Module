@@ -7,7 +7,6 @@
 
 #import "MKPickerView.h"
 #import "MKMacroDefines.h"
-#import "MKCustomUIAdopter.h"
 
 static NSTimeInterval const animationDuration = .3f;
 static CGFloat const kDatePickerH = 270;
@@ -18,6 +17,9 @@ static CGFloat const pickViewRowHeight = 30;
 @property (nonatomic, strong)UIView *bottomView;
 
 @property (nonatomic, strong)UIPickerView *pickView;
+
+/// 当前pickView的数据源
+@property (nonatomic, strong)NSMutableArray *dataList;
 
 @property (nonatomic, copy)void (^rowPickBlock)(NSInteger currentRow);
 
@@ -66,8 +68,15 @@ static CGFloat const pickViewRowHeight = 30;
 }
 
 - (nullable NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    NSString *titleString = self.dataList[row];
-    NSAttributedString *attributedString = [MKCustomUIAdopter attributedString:@[titleString] fonts:@[MKFont(15.f)] colors:@[DEFAULT_TEXT_COLOR]];
+    
+    NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.dataList[row]];
+    [attributedString addAttribute:NSForegroundColorAttributeName
+                             value:(id)(DEFAULT_TEXT_COLOR)
+                             range:NSMakeRange(0, attributedString.length)];
+    [attributedString addAttribute:NSFontAttributeName
+                             value:(id)(MKFont(15.f))
+                             range:NSMakeRange(0, attributedString.length)];
+    
     return attributedString;
 }
 
@@ -84,22 +93,21 @@ static CGFloat const pickViewRowHeight = 30;
 /**
  取消选择
  */
-- (void)cancelButtonPressed{
+- (void)cancelButtonPressed {
     [self dismiss];
 }
 
 /**
  确认选择
  */
-- (void)confirmButtonPressed{
+- (void)confirmButtonPressed {
     if (self.rowPickBlock) {
         self.rowPickBlock(self.currentRow);
     }
     [self dismiss];
 }
 
-- (void)dismiss
-{
+- (void)dismiss {
     if (self.superview) {
         [self removeFromSuperview];
     }
@@ -107,10 +115,17 @@ static CGFloat const pickViewRowHeight = 30;
 
 #pragma mark - Public Method
 
-- (void)showPickViewWithIndex:(NSInteger)row block:(void (^)(NSInteger currentRow))block {
+- (void)showPickViewWithDataList:(NSArray <NSString *>*)dataList
+                     selectedRow:(NSInteger)selectedRow
+                           block:(void (^)(NSInteger currentRow))block {
+    if (!ValidArray(dataList) || selectedRow >= dataList.count) {
+        NSLog(@"显示pickView错误");
+        return;
+    }
     [kAppWindow addSubview:self];
+    [self.dataList addObjectsFromArray:dataList];
     self.rowPickBlock = block;
-    self.currentRow = row;
+    self.currentRow = selectedRow;
     [self.pickView reloadAllComponents];
     [self.pickView selectRow:self.currentRow inComponent:0 animated:NO];
     [UIView animateWithDuration:animationDuration animations:^{
@@ -174,6 +189,13 @@ static CGFloat const pickViewRowHeight = 30;
         _pickView.backgroundColor = COLOR_CLEAR_MACROS;
     }
     return _pickView;
+}
+
+- (NSMutableArray *)dataList {
+    if (!_dataList) {
+        _dataList = [NSMutableArray array];
+    }
+    return _dataList;
 }
 
 @end

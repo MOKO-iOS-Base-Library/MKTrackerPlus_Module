@@ -37,7 +37,7 @@ static dispatch_once_t onceToken;
 
 @property (nonatomic, copy)void (^failedBlock)(NSError *error);
 
-@property (nonatomic, assign)mk_tp_bleCentralConnectStatus connectStatus;
+@property (nonatomic, assign)mk_tp_centralConnectStatus connectStatus;
 
 @property (nonatomic, strong)NSMutableArray *dataList;
 
@@ -112,13 +112,13 @@ static dispatch_once_t onceToken;
 - (void)MKBLEBasePeripheralConnectStateChanged:(MKPeripheralConnectState)connectState {
     //连接成功的判断必须是发送密码成功之后
     if (connectState == MKPeripheralConnectStateUnknow) {
-        self.connectStatus = mk_tp_bleCentralConnectStatusUnknow;
+        self.connectStatus = mk_tp_centralConnectStatusUnknow;
     }else if (connectState == MKPeripheralConnectStateConnecting) {
-        self.connectStatus = mk_tp_bleCentralConnectStatusConnecting;
+        self.connectStatus = mk_tp_centralConnectStatusConnecting;
     }else if (connectState == MKPeripheralConnectStateConnectedFailed) {
-        self.connectStatus = mk_tp_bleCentralConnectStatusConnectedFailed;
+        self.connectStatus = mk_tp_centralConnectStatusConnectedFailed;
     }else if (connectState == MKPeripheralConnectStateDisconnect) {
-        self.connectStatus = mk_tp_bleCentralConnectStatusDisconnect;
+        self.connectStatus = mk_tp_centralConnectStatusDisconnect;
     }
     [[NSNotificationCenter defaultCenter] postNotificationName:mk_tp_peripheralConnectStateChangedNotification object:nil];
 }
@@ -164,8 +164,10 @@ static dispatch_once_t onceToken;
     return [MKBLEBaseCentralManager shared].peripheral;
 }
 
-- (MKCentralManagerState )centralStatus {
-    return [MKBLEBaseCentralManager shared].centralStatus;
+- (mk_tp_centralManagerStatus )centralStatus {
+    return ([MKBLEBaseCentralManager shared].centralStatus == MKCentralManagerStateEnable)
+    ? mk_tp_centralManagerStatusEnable
+    : mk_tp_centralManagerStatusUnable;
 }
 
 - (void)startScan {
@@ -213,7 +215,7 @@ static dispatch_once_t onceToken;
 }
 
 - (BOOL)notifyScannerTrackedData:(BOOL)notify {
-    if (self.connectStatus != mk_tp_bleCentralConnectStatusConnected || [MKBLEBaseCentralManager shared].peripheral == nil || [MKBLEBaseCentralManager shared].peripheral.tp_storageData == nil) {
+    if (self.connectStatus != mk_tp_centralConnectStatusConnected || [MKBLEBaseCentralManager shared].peripheral == nil || [MKBLEBaseCentralManager shared].peripheral.tp_storageData == nil) {
         return NO;
     }
     [[MKBLEBaseCentralManager shared].peripheral setNotifyValue:notify
@@ -222,7 +224,7 @@ static dispatch_once_t onceToken;
 }
 
 - (BOOL)notifyDisconnectType:(BOOL)notify {
-    if (self.connectStatus != mk_tp_bleCentralConnectStatusConnected || [MKBLEBaseCentralManager shared].peripheral == nil || [MKBLEBaseCentralManager shared].peripheral.tp_disconnectType == nil) {
+    if (self.connectStatus != mk_tp_centralConnectStatusConnected || [MKBLEBaseCentralManager shared].peripheral == nil || [MKBLEBaseCentralManager shared].peripheral.tp_disconnectType == nil) {
         return NO;
     }
     [[MKBLEBaseCentralManager shared].peripheral setNotifyValue:notify
@@ -293,7 +295,7 @@ static dispatch_once_t onceToken;
         }
         //密码正确
         MKBLEBase_main_safe(^{
-            self.connectStatus = mk_tp_bleCentralConnectStatusConnected;
+            self.connectStatus = mk_tp_centralConnectStatusConnected;
             [[NSNotificationCenter defaultCenter] postNotificationName:mk_tp_peripheralConnectStateChangedNotification object:nil];
             if (self.sucBlock) {
                 self.sucBlock([MKBLEBaseCentralManager shared].peripheral);

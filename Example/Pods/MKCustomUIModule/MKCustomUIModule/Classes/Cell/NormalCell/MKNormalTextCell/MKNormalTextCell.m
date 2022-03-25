@@ -138,9 +138,10 @@ static CGFloat const offset_X = 15.f;
 - (void)setDataModel:(MKNormalTextCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKNormalTextCellModel.class]) {
         return;
     }
+    self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : COLOR_WHITE_MACROS);
     self.leftMsgLabel.text = (ValidStr(_dataModel.leftMsg) ? _dataModel.leftMsg : @"");
     self.leftMsgLabel.textColor = (_dataModel.leftMsgTextColor ? _dataModel.leftMsgTextColor : DEFAULT_TEXT_COLOR);
     self.leftMsgLabel.font = (_dataModel.leftMsgTextFont ? _dataModel.leftMsgTextFont : MKFont(15.f));
@@ -214,7 +215,7 @@ static CGFloat const offset_X = 15.f;
 - (UIImageView *)rightIcon {
     if (!_rightIcon) {
         _rightIcon = [[UIImageView alloc] init];
-        _rightIcon.image = LOADICON(@"MKCustomUIModule", @"MKNormalTextCell", @"go_next_button.png");
+        _rightIcon.image = LOADICON(@"MKCustomUIModule", @"MKNormalTextCell", @"mk_customUI_goNextButton.png");
     }
     return _rightIcon;
 }

@@ -78,7 +78,7 @@
 
 - (void)switchButtonPressed {
     self.switchButton.selected = !self.switchButton.selected;
-    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_MKCustomUIModule_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_MKCustomUIModule_switchUnselectedIcon.png"));
+    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_customUI_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_customUI_switchUnselectedIcon.png"));
     [self.switchButton setImage:buttonImage forState:UIControlStateNormal];
     if ([self.delegate respondsToSelector:@selector(mk_loraSetting_advanceCell_switchStatusChanged:)]) {
         [self.delegate mk_loraSetting_advanceCell_switchStatusChanged:self.switchButton.isSelected];
@@ -89,12 +89,13 @@
 - (void)setDataModel:(MKLoRaAdvancedSettingCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKLoRaAdvancedSettingCellModel.class]) {
         return;
     }
+    self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : COLOR_WHITE_MACROS);
     [self.switchButton setEnabled:_dataModel.switchEnable];
     [self.switchButton setSelected:_dataModel.isOn];
-    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_MKCustomUIModule_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_MKCustomUIModule_switchUnselectedIcon.png"));
+    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_customUI_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_customUI_switchUnselectedIcon.png"));
     [self.switchButton setImage:buttonImage forState:UIControlStateNormal];
 }
 
@@ -102,7 +103,7 @@
 - (UILabel *)msgLabel {
     if (!_msgLabel) {
         _msgLabel = [[UILabel alloc] init];
-        _msgLabel.textColor = UIColorFromRGB(0x2F84D0);
+        _msgLabel.textColor = NAVBAR_COLOR_MACROS;
         _msgLabel.textAlignment = NSTextAlignmentLeft;
         _msgLabel.font = MKFont(18.f);
         _msgLabel.text = @"Advanced Setting(Optional)";
@@ -113,7 +114,7 @@
 - (UIButton *)switchButton {
     if (!_switchButton) {
         _switchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_switchButton setImage:LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_MKCustomUIModule_switchUnselectedIcon.png") forState:UIControlStateNormal];
+        [_switchButton setImage:LOADICON(@"MKCustomUIModule", @"MKLoRaAdvancedSettingCell", @"mk_customUI_switchUnselectedIcon.png") forState:UIControlStateNormal];
         [_switchButton addTarget:self
                           action:@selector(switchButtonPressed)
                 forControlEvents:UIControlEventTouchUpInside];

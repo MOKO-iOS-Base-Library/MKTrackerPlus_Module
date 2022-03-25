@@ -1,17 +1,13 @@
-//
-//  MKTextField.h
-//  MKBaseModuleLibrary_Example
-//
-//  Created by aa on 2020/12/28.
-//  Copyright © 2020 aadyx2007@163.com. All rights reserved.
-//
+/*
+ 输入框UIMenuController菜单目前只支持粘贴、拷贝、剪切、选中、全部选中
+ */
 
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
 typedef NS_ENUM(NSInteger, mk_textFieldType) {
-    mk_normal,                    //默认输入，没有任何的输入校验规则
+    mk_normal,                         //默认输入，没有任何的输入校验规则
     mk_realNumberOnly,                 //只能输入数字
     mk_letterOnly,                     //只能输入字母
     mk_reakNumberOrLetter,             //可以输入字母或者数字
@@ -24,10 +20,14 @@ typedef NS_ENUM(NSInteger, mk_textFieldType) {
 //最大输入长度,如果是默认0，则不限制输入长度
 @property (nonatomic, assign)NSUInteger maxLength;
 
+@property (nonatomic, assign)mk_textFieldType textType;
+
+/// 文本内容发生改变触发的回调
+@property (nonatomic, copy)void (^textChangedBlock)(NSString *text);
+
 /// 初始化方法
 /// @param textType 当前textField的输入类型
-/// @param block textField值发生改变的时候回调
-- (instancetype)initWithTextFieldType:(mk_textFieldType)textType textChangedBlock:(void (^)(NSString *text))block;
+- (instancetype)initWithTextFieldType:(mk_textFieldType)textType;
 
 @end
 

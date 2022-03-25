@@ -136,10 +136,12 @@
 - (MKTextField *)textField {
     if (!_textField) {
         WS(weakSelf);
-        _textField = [[MKTextField alloc] initWithTextFieldType:mk_realNumberOnly textChangedBlock:^(NSString * _Nonnull text) {
+        _textField = [[MKTextField alloc] initWithTextFieldType:mk_realNumberOnly];
+        _textField.textChangedBlock = ^(NSString * _Nonnull text) {
             __strong typeof(self) sself = weakSelf;
             [sself textFieldValueChanged:text];
-        }];
+        };
+        
         _textField.maxLength = 5;
         _textField.font = MKFont(13.f);
         _textField.textColor = DEFAULT_TEXT_COLOR;

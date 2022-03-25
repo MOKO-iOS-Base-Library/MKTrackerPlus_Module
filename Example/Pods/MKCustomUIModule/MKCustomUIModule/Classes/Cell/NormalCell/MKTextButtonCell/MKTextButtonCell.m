@@ -126,8 +126,7 @@ static CGFloat const selectButtonHeight = 30.f;
         }
     }
     MKPickerView *pickView = [[MKPickerView alloc] init];
-    pickView.dataList = self.dataModel.dataList;
-    [pickView showPickViewWithIndex:row block:^(NSInteger currentRow) {
+    [pickView showPickViewWithDataList:self.dataModel.dataList selectedRow:row block:^(NSInteger currentRow) {
         [self.selectedButton setTitle:self.dataModel.dataList[currentRow] forState:UIControlStateNormal];
         if ([self.delegate respondsToSelector:@selector(mk_loraTextButtonCellSelected:dataListIndex:value:)]) {
             [self.delegate mk_loraTextButtonCellSelected:self.dataModel.index dataListIndex:currentRow value:self.dataModel.dataList[currentRow]];
@@ -139,9 +138,10 @@ static CGFloat const selectButtonHeight = 30.f;
 - (void)setDataModel:(MKTextButtonCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel || _dataModel.dataListIndex >= _dataModel.dataList.count) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKTextButtonCellModel.class] || _dataModel.dataListIndex >= _dataModel.dataList.count) {
         return;
     }
+    self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : COLOR_WHITE_MACROS);
     self.msgLabel.text = SafeStr(_dataModel.msg);
     self.msgLabel.font = (_dataModel.msgFont ? _dataModel.msgFont : MKFont(15.f));
     self.msgLabel.textColor = (_dataModel.msgColor ? _dataModel.msgColor : DEFAULT_TEXT_COLOR);
@@ -155,7 +155,7 @@ static CGFloat const selectButtonHeight = 30.f;
     if (_dataModel.buttonBackColor) {
         [self.selectedButton setBackgroundColor:_dataModel.buttonBackColor];
     }else {
-        [self.selectedButton setBackgroundColor:UIColorFromRGB(0x2F84D0)];
+        [self.selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
     }
     if (_dataModel.buttonTitleColor) {
         [self.selectedButton setTitleColor:_dataModel.buttonTitleColor forState:UIControlStateNormal];
@@ -217,7 +217,7 @@ static CGFloat const selectButtonHeight = 30.f;
     if (!_selectedButton) {
         _selectedButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [_selectedButton setTitleColor:COLOR_WHITE_MACROS forState:UIControlStateNormal];
-        [_selectedButton setBackgroundColor:UIColorFromRGB(0x2F84D0)];
+        [_selectedButton setBackgroundColor:NAVBAR_COLOR_MACROS];
         [_selectedButton.layer setMasksToBounds:YES];
         [_selectedButton.layer setCornerRadius:6.f];
         [_selectedButton addTarget:self

@@ -112,7 +112,7 @@
     if (self.disconnectType) {
         return;
     }
-    if ([MKTPCentralManager shared].centralStatus != MKCentralManagerStateEnable) {
+    if ([MKTPCentralManager shared].centralStatus != mk_tp_centralManagerStatusEnable) {
         [self showAlertWithMsg:@"The current system of bluetooth is not available!" title:@"Dismiss"];
     }
 }

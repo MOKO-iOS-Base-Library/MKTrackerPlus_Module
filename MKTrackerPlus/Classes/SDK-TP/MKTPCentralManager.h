@@ -14,12 +14,17 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-typedef NS_ENUM(NSInteger, mk_tp_bleCentralConnectStatus) {
-    mk_tp_bleCentralConnectStatusUnknow,                                           //未知状态
-    mk_tp_bleCentralConnectStatusConnecting,                                       //正在连接
-    mk_tp_bleCentralConnectStatusConnected,                                        //连接成功
-    mk_tp_bleCentralConnectStatusConnectedFailed,                                  //连接失败
-    mk_tp_bleCentralConnectStatusDisconnect,
+typedef NS_ENUM(NSInteger, mk_tp_centralConnectStatus) {
+    mk_tp_centralConnectStatusUnknow,                                           //未知状态
+    mk_tp_centralConnectStatusConnecting,                                       //正在连接
+    mk_tp_centralConnectStatusConnected,                                        //连接成功
+    mk_tp_centralConnectStatusConnectedFailed,                                  //连接失败
+    mk_tp_centralConnectStatusDisconnect,
+};
+
+typedef NS_ENUM(NSInteger, mk_tp_centralManagerStatus) {
+    mk_tp_centralManagerStatusUnable,                           //不可用
+    mk_tp_centralManagerStatusEnable,                           //可用状态
 };
 
 //Notification of device connection status changes.
@@ -60,7 +65,7 @@ extern NSString *const mk_tp_deviceDisconnectTypeNotification;
 @property (nonatomic, weak)id <mk_tp_centralManagerScanDelegate>delegate;
 
 /// Current connection status
-@property (nonatomic, assign, readonly)mk_tp_bleCentralConnectStatus connectStatus;
+@property (nonatomic, assign, readonly)mk_tp_centralConnectStatus connectStatus;
 
 + (MKTPCentralManager *)shared;
 
@@ -76,7 +81,7 @@ extern NSString *const mk_tp_deviceDisconnectTypeNotification;
 - (nullable CBPeripheral *)peripheral;
 
 /// Current Bluetooth center status
-- (MKCentralManagerState )centralStatus;
+- (mk_tp_centralManagerStatus )centralStatus;
 
 /// Bluetooth Center starts scanning
 - (void)startScan;

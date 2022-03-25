@@ -167,10 +167,11 @@
 - (MKFilterNormalTextView *)leftTextField {
     if (!_leftTextField) {
         WS(weakSelf);
-        MKTextField *textField = [self loadTextFieldWithCallback:^(NSString *text) {
+        MKTextField *textField = [self loadTextField];
+        textField.textChangedBlock = ^(NSString * _Nonnull text) {
             __strong typeof(self) sself = weakSelf;
             [sself leftTextFieldValueChanged:text];
-        }];
+        };
         _leftTextField = [[MKFilterNormalTextView alloc] initWithTextField:textField];
     }
     return _leftTextField;
@@ -179,10 +180,11 @@
 - (MKFilterNormalTextView *)rightTextField {
     if (!_rightTextField) {
         WS(weakSelf);
-        MKTextField *textField = [self loadTextFieldWithCallback:^(NSString *text) {
+        MKTextField *textField = [self loadTextField];
+        textField.textChangedBlock = ^(NSString * _Nonnull text) {
             __strong typeof(self) sself = weakSelf;
             [sself rightTextFieldValueChanged:text];
-        }];
+        };
         _rightTextField = [[MKFilterNormalTextView alloc] initWithTextField:textField];
     }
     return _rightTextField;
@@ -210,8 +212,8 @@
     return _toLabel;
 }
 
-- (MKTextField *)loadTextFieldWithCallback:(void (^)(NSString *text))callback{
-    MKTextField *textField = [[MKTextField alloc] initWithTextFieldType:mk_realNumberOnly textChangedBlock:callback];
+- (MKTextField *)loadTextField {
+    MKTextField *textField = [[MKTextField alloc] initWithTextFieldType:mk_realNumberOnly];
     textField.borderStyle = UITextBorderStyleNone;
     textField.maxLength = 5;
     textField.placeholder = @"0~65535";
@@ -299,7 +301,7 @@
 #pragma mark - event method
 - (void)switchButtonPressed {
     self.switchButton.selected = !self.switchButton.selected;
-    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_MKCustomUIModule_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_MKCustomUIModule_switchUnselectedIcon.png"));
+    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_switchUnselectedIcon.png"));
     [self.switchButton setImage:buttonImage forState:UIControlStateNormal];
     if (self.normalView) {
         self.normalView.hidden = !self.switchButton.isSelected;
@@ -316,9 +318,9 @@
 
 - (void)listButtonMethod {
     self.listButton.selected = !self.listButton.selected;
-    UIImage *image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"listButtonUnselectedIcon.png");
+    UIImage *image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_listButtonUnselectedIcon.png");
     if (self.listButton.isSelected) {
-        image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"listButtonSelectedIcon.png");
+        image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_listButtonSelectedIcon.png");
     }
     self.selectedIcon.image = image;
     if ([self.delegate respondsToSelector:@selector(mk_listButtonStateChanged:index:)]) {
@@ -357,19 +359,20 @@
 - (void)setDataModel:(MKFilterDataCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKFilterDataCellModel.class]) {
         return;
     }
+    self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : COLOR_WHITE_MACROS);
     self.msgLabel.text = SafeStr(_dataModel.msg);
     self.switchButton.enabled = _dataModel.switchEnable;
     self.switchButton.selected = _dataModel.isOn;
-    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_MKCustomUIModule_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_MKCustomUIModule_switchUnselectedIcon.png"));
+    UIImage *buttonImage = (self.switchButton.isSelected ? LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_switchSelectedIcon.png") : LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_switchUnselectedIcon.png"));
     [self.switchButton setImage:buttonImage forState:UIControlStateNormal];
     self.listButton.selected = _dataModel.selected;
     self.listButton.enabled = _dataModel.enabled;
-    UIImage *image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"listButtonUnselectedIcon.png");
+    UIImage *image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_listButtonUnselectedIcon.png");
     if (self.listButton.isSelected) {
-        image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"listButtonSelectedIcon.png");
+        image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_listButtonSelectedIcon.png");
     }
     self.selectedIcon.image = image;
     
@@ -443,7 +446,7 @@
 - (UIImageView *)selectedIcon {
     if (!_selectedIcon) {
         _selectedIcon = [[UIImageView alloc] init];
-        _selectedIcon.image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"listButtonUnselectedIcon.png");
+        _selectedIcon.image = LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_listButtonUnselectedIcon.png");
     }
     return _selectedIcon;
 }
@@ -462,7 +465,7 @@
 - (UIButton *)switchButton {
     if (!_switchButton) {
         _switchButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_switchButton setImage:LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_MKCustomUIModule_switchUnselectedIcon") forState:UIControlStateNormal];
+        [_switchButton setImage:LOADICON(@"MKCustomUIModule", @"MKFilterDataCell", @"mk_customUI_switchUnselectedIcon") forState:UIControlStateNormal];
         [_switchButton addTarget:self
                           action:@selector(switchButtonPressed)
                 forControlEvents:UIControlEventTouchUpInside];
@@ -485,7 +488,9 @@
                                 maxLength:(NSInteger)maxLength
                                      type:(mk_textFieldType)type
                                  callBack:(void (^)(NSString *text))callBack{
-    MKTextField *textField = [[MKTextField alloc] initWithTextFieldType:type textChangedBlock:callBack];
+    MKTextField *textField = [[MKTextField alloc] init];
+    textField.textType = type;
+    textField.textChangedBlock = callBack;
     textField.borderStyle = UITextBorderStyleNone;
     textField.maxLength = maxLength;
     textField.placeholder = placeholder;

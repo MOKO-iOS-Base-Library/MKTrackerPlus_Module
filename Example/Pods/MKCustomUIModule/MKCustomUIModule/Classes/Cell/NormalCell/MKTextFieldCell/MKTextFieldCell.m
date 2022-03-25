@@ -154,9 +154,10 @@ static CGFloat const unitLabelWidth = 70.f;
 - (void)setDataModel:(MKTextFieldCellModel *)dataModel {
     _dataModel = nil;
     _dataModel = dataModel;
-    if (!_dataModel) {
+    if (!_dataModel || ![_dataModel isKindOfClass:MKTextFieldCellModel.class]) {
         return;
     }
+    self.contentView.backgroundColor = (_dataModel.contentColor ? _dataModel.contentColor : COLOR_WHITE_MACROS);
     self.unitLabel.text = SafeStr(_dataModel.unit);
     self.unitLabel.font = (_dataModel.unitFont ? _dataModel.unitFont : MKFont(13.f));
     self.unitLabel.textColor = (_dataModel.unitColor ? _dataModel.unitColor : DEFAULT_TEXT_COLOR);
@@ -288,7 +289,9 @@ static CGFloat const unitLabelWidth = 70.f;
                                      font:(UIFont *)font
                                 textColor:(UIColor *)textColor
                                  callBack:(void (^)(NSString *text))callBack{
-    MKTextField *textField = [[MKTextField alloc] initWithTextFieldType:type textChangedBlock:callBack];
+    MKTextField *textField = [[MKTextField alloc] init];
+    textField.textType = type;
+    textField.textChangedBlock = callBack;
     textField.borderStyle = UITextBorderStyleNone;
     textField.maxLength = maxLength;
     textField.placeholder = placeholder;

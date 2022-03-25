@@ -120,7 +120,7 @@ MKTPTabBarControllerDelegate>
 
 #pragma mark - super method
 - (void)leftButtonMethod {
-    if ([MKTPCentralManager shared].centralStatus != MKCentralManagerStateEnable) {
+    if ([MKTPCentralManager shared].centralStatus != mk_tp_centralManagerStatusEnable) {
         [self.view showCentralToast:@"The current system of bluetooth is not available!"];
         return;
     }
@@ -224,7 +224,7 @@ MKTPTabBarControllerDelegate>
 #pragma mark - notice method
 
 - (void)showCentralStatus{
-    if ([MKTPCentralManager shared].centralStatus != MKCentralManagerStateEnable) {
+    if ([MKTPCentralManager shared].centralStatus != mk_tp_centralManagerStatusEnable) {
         NSString *msg = @"The current system of bluetooth is not available!";
         UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Dismiss"
                                                                                  message:msg

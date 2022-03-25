@@ -9,7 +9,6 @@
 #import "MKSearchConditionsView.h"
 
 #import "MKMacroDefines.h"
-#import "MKCustomUIAdopter.h"
 #import "MKSlider.h"
 
 static CGFloat const offset_X = 10.f;
@@ -143,8 +142,8 @@ static CGFloat const signalIconHeight = 15.f;
     if (ValidStr(searchKey)) {
         [self.textField setText:searchKey];
     }
-    [self.slider setValue:rssiValue];
     [self.slider setMinimumValue:minSearchRssi];
+    [self.slider setValue:rssiValue];
     [self.rssiValueLabel setText:[NSString stringWithFormat:@"%lddBm",(long)rssiValue]];
     [UIView animateWithDuration:0.25 animations:^{
         self.backView.transform = CGAffineTransformMakeTranslation(0, backViewHeight + statusBarHeight);
@@ -175,10 +174,10 @@ static CGFloat const signalIconHeight = 15.f;
         _textField.borderStyle = UITextBorderStyleNone;
         _textField.font = MKFont(13.f);
         _textField.textColor = DEFAULT_TEXT_COLOR;
-        _textField.attributedPlaceholder = [MKCustomUIAdopter attributedString:@[@"Device name or mac address"] fonts:@[MKFont(15.f)] colors:@[RGBCOLOR(222, 222, 222)]];
+        _textField.placeholder = @"Device name or mac address";
         _textField.clearButtonMode = UITextFieldViewModeWhileEditing;
         _textField.layer.masksToBounds = YES;
-        _textField.layer.borderColor = UIColorFromRGB(0x2F84D0).CGColor;
+        _textField.layer.borderColor = NAVBAR_COLOR_MACROS.CGColor;
         _textField.layer.borderWidth = 0.5f;
         _textField.layer.cornerRadius = 4.f;
     }
@@ -192,7 +191,7 @@ static CGFloat const signalIconHeight = 15.f;
                                        backViewHeight - 45.f - offset_X,
                                        kViewWidth - 4 * offset_X,
                                        45.f);
-        [_doneButton setBackgroundColor:UIColorFromRGB(0x2F84D0)];
+        [_doneButton setBackgroundColor:NAVBAR_COLOR_MACROS];
         [_doneButton setTitle:@"DONE" forState:UIControlStateNormal];
         [_doneButton.titleLabel setFont:MKFont(16.f)];
         [_doneButton.layer setMasksToBounds:YES];
@@ -210,7 +209,7 @@ static CGFloat const signalIconHeight = 15.f;
                                                                     offset_X * 3 + 30.f,
                                                                     signalIconWidth,
                                                                     signalIconHeight)];
-        _signalIcon.image = LOADICON(@"MKCustomUIModule", @"MKSearchConditionsView", @"wifisignalIcon.png");
+        _signalIcon.image = LOADICON(@"MKCustomUIModule", @"MKSearchConditionsView", @"mk_customUI_wifisignalIcon.png");
     }
     return _signalIcon;
 }
