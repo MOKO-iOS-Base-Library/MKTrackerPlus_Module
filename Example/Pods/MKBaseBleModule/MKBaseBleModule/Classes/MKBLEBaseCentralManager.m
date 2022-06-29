@@ -18,12 +18,6 @@ static dispatch_once_t onceToken;
 
 static NSTimeInterval const defaultConnectTime = 20.f;
 
-typedef NS_ENUM(NSInteger, mk_currentAction) {
-    mk_managerActionDefault,
-    mk_managerActionScan,
-    mk_managerActionConnecting,
-};
-
 @interface NSObject (MKBLECentralManager)
 
 @end
@@ -249,9 +243,16 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
 }
 
 - (BOOL)scanForPeripheralsWithServices:(NSArray<CBUUID *> *)services options:(NSDictionary<NSString *,id> *)options {
-    if (self.centralManager.state != CBManagerStatePoweredOn || self.managerAction != mk_managerActionDefault) {
-        //当前蓝牙状态不可用、处于连接或者扫描状态
+    if (self.centralManager.state != CBManagerStatePoweredOn) {
+        //当前蓝牙状态不可用
         return NO;
+    }
+    if (self.managerAction == mk_managerActionScan) {
+        //处于扫描状态
+        [self.centralManager stopScan];
+    }else if (self.managerAction == mk_managerActionConnecting) {
+        //处于连接状态
+        [self connectPeripheralFailed];
     }
     self.managerAction = mk_managerActionScan;
     MKBLEBase_main_safe(^{
@@ -268,10 +269,11 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
 }
 
 - (BOOL)stopScan {
-    if (self.managerAction != mk_managerActionScan) {
-        return NO;
+    if (self.managerAction == mk_managerActionScan) {
+        [self.centralManager stopScan];
+    }else if (self.managerAction == mk_managerActionConnecting) {
+        [self connectPeripheralFailed];
     }
-    [self.centralManager stopScan];
     self.managerAction = mk_managerActionDefault;
     MKBLEBase_main_safe(^{
         @synchronized (self.managerList) {
@@ -288,7 +290,7 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
 - (void)connectDevice:(id <MKBLEBasePeripheralProtocol>)peripheralProtocol
              sucBlock:(MKBLEConnectSuccessBlock)sucBlock
           failedBlock:(MKBLEConnectFailedBlock)failedBlock {
-    if (!peripheralProtocol || ![peripheralProtocol conformsToProtocol:@protocol(MKBLEBasePeripheralProtocol)]) {
+    if (!peripheralProtocol || !peripheralProtocol.peripheral || ![peripheralProtocol conformsToProtocol:@protocol(MKBLEBasePeripheralProtocol)]) {
         [MKBLEBaseSDKAdopter operationProtocolErrorBlock:failedBlock];
         return;
     }
@@ -306,16 +308,16 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
     __weak typeof(self) weakSelf = self;
     [self connectWithProtocol:peripheralProtocol sucBlock:^(CBPeripheral * _Nonnull peripheral) {
         __strong typeof(self) sself = weakSelf;
+        [sself clearConnectBlock];
         if (sucBlock) {
             sucBlock(peripheral);
         }
-        [sself clearConnectBlock];
     } failedBlock:^(NSError * _Nonnull error) {
         __strong typeof(self) sself = weakSelf;
+        [sself clearConnectBlock];
         if (failedBlock) {
             failedBlock(error);
         }
-        [sself clearConnectBlock];
     }];
 }
 - (void)disconnect {
@@ -430,7 +432,9 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
                         sucBlock:(MKBLEConnectSuccessBlock)sucBlock
                     failedBlock:(MKBLEConnectFailedBlock)failedBlock{
     if (self.peripheralManager) {
-        [self.centralManager cancelPeripheralConnection:self.peripheralManager.peripheral];
+        if (self.peripheralManager.peripheral) {
+            [self.centralManager cancelPeripheralConnection:self.peripheralManager.peripheral];
+        }
         [self.peripheralManager setNil];
         self.peripheralManager = nil;
     }
@@ -479,7 +483,9 @@ typedef NS_ENUM(NSInteger, mk_currentAction) {
 - (void)connectPeripheralFailed{
     [self resetOriSettings];
     if (self.peripheralManager) {
-        [self.centralManager cancelPeripheralConnection:self.peripheralManager.peripheral];
+        if (self.peripheralManager.peripheral) {
+            [self.centralManager cancelPeripheralConnection:self.peripheralManager.peripheral];
+        }
         [self.peripheralManager setNil];
         self.peripheralManager = nil;
     }
